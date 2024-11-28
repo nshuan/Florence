@@ -13,7 +13,7 @@ namespace Runtime.Core.Transition
         
         public void Init(Transform target)
         {
-            blackCover.gameObject.SetActive(false);
+            blackCover.gameObject.SetActive(true);
         }
 
         public Tween DoTransition()

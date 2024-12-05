@@ -1927,37 +1927,37 @@ MonoBehaviour:
       type: {class: AnimSpriteFrame, ns: Runtime.Chapters.Act1, asm: Assembly-CSharp}
       data:
         sprite: {fileID: 21300000, guid: 63f8a36a248239c4a9fba60f106ecc98, type: 3}
-        duration: 0.2
+        duration: 0.15
     - rid: 3855360676580032541
       type: {class: AnimSpriteFrame, ns: Runtime.Chapters.Act1, asm: Assembly-CSharp}
       data:
         sprite: {fileID: 21300000, guid: d0fb012d4416e7743bbd25c3fb1f4254, type: 3}
-        duration: 0.2
+        duration: 0.15
     - rid: 3855360676580032542
       type: {class: AnimSpriteFrame, ns: Runtime.Chapters.Act1, asm: Assembly-CSharp}
       data:
         sprite: {fileID: 21300000, guid: bd292add376607048957ad5bb066a5a0, type: 3}
-        duration: 0.2
+        duration: 0.15
     - rid: 3855360676580032543
       type: {class: AnimSpriteFrame, ns: Runtime.Chapters.Act1, asm: Assembly-CSharp}
       data:
         sprite: {fileID: 21300000, guid: cc67322d13ee03b44b00817b81984eba, type: 3}
-        duration: 0.2
+        duration: 0.15
     - rid: 3855360676580032544
       type: {class: AnimSpriteFrame, ns: Runtime.Chapters.Act1, asm: Assembly-CSharp}
       data:
         sprite: {fileID: 21300000, guid: baa3d2a89d5d26a4d937d3c13699b962, type: 3}
-        duration: 0.2
+        duration: 0.15
     - rid: 3855360676580032545
       type: {class: AnimSpriteFrame, ns: Runtime.Chapters.Act1, asm: Assembly-CSharp}
       data:
         sprite: {fileID: 21300000, guid: b0966654d63228741b933800228881a4, type: 3}
-        duration: 0.2
+        duration: 0.15
     - rid: 3855360676580032546
       type: {class: AnimSpriteFrame, ns: Runtime.Chapters.Act1, asm: Assembly-CSharp}
       data:
         sprite: {fileID: 21300000, guid: e9f1b54bda634954d9af0cd0024b5e41, type: 3}
-        duration: 0.2
+        duration: 0.15
     - rid: 3855360676580032547
       type: {class: AnimSpriteFrame, ns: Runtime.Chapters.Act1, asm: Assembly-CSharp}
       data:
@@ -2744,26 +2744,26 @@ MonoBehaviour:
       data:
         target: {fileID: 1857480723}
         targetPos: {fileID: 1531203645}
-        duration: 1
+        duration: 1.5
         delay: 0
     - rid: 3855360676580032539
       type: {class: EffectMoveIn, ns: Runtime.Effects, asm: Assembly-CSharp}
       data:
         target: {fileID: 1182369340}
         fromTargetPos: {fileID: 1011137035}
-        duration: 1
+        duration: 1.5
         delay: 0
     - rid: 3855360676580032548
       type: {class: EffectTimer, ns: Runtime.Chapters.Act1, asm: Assembly-CSharp}
       data:
         timerAnims: {fileID: 1358604337}
-        delay: 0.5
+        delay: 1
     - rid: 3855360676580032549
       type: {class: EffectFadeIn, ns: Runtime.Chapters.Act1, asm: Assembly-CSharp}
       data:
         _canvasGroup: {fileID: 434319564}
-        duration: 1
-        delay: 1.5
+        duration: 1.6
+        delay: 1
     - rid: 3855360676580032552
       type: {class: JoinNode, ns: Runtime.Effects, asm: Assembly-CSharp}
       data:

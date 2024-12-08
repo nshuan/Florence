@@ -10,6 +10,7 @@ namespace Runtime.Chapters.Act1
         [SerializeField] private Image target;
         [SerializeReference, SubclassSelector] private AnimSpriteFrame[] frames;
         [SerializeField] private bool playOnEnable = false;
+        [SerializeField] private bool loop = false;
 
         private void OnEnable()
         {
@@ -20,16 +21,27 @@ namespace Runtime.Chapters.Act1
             }
         }
 
+        private void OnDestroy()
+        {
+            transform.DOKill();
+        }
+
         public Tween Play()
         {
-            var seq = DOTween.Sequence();
+            var seq = DOTween.Sequence().SetTarget(transform);
 
             foreach (var frame in frames)
             {
-                seq.AppendCallback(() => target.sprite = frame.sprite)
+                seq.AppendCallback(() =>
+                    {
+                        // if (target)
+                            target.sprite = frame.sprite;
+                    })
                     .AppendInterval(frame.duration);
             }
 
+            if (loop) seq.SetLoops(-1);
+            
             return seq;
         }
     }

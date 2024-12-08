@@ -9,6 +9,16 @@ namespace Runtime.Chapters.Act1
     {
         [SerializeField] private Image target;
         [SerializeReference, SubclassSelector] private AnimSpriteFrame[] frames;
+        [SerializeField] private bool playOnEnable = false;
+
+        private void OnEnable()
+        {
+            if (playOnEnable)
+            {
+                transform.DOKill();
+                Play();
+            }
+        }
 
         public Tween Play()
         {

@@ -14,10 +14,12 @@ namespace Runtime.Effects
         
         public Tween GetTween()
         {
-            target.position = fromTargetPos.position;
-            target.gameObject.SetActive(true);
-
             return DOTween.Sequence().SetDelay(delay)
+                .AppendCallback(() =>
+                {
+                    target.position = fromTargetPos.position;
+                    target.gameObject.SetActive(true);
+                })
                 .Append(target.DOLocalMove(Vector3.zero, duration));
         }
     }

@@ -20,7 +20,7 @@ namespace Runtime.Effects
                 .AppendCallback(() =>
                 {
                     target.localScale = from;
-                          target.gameObject.SetActive(true);
+                    target.gameObject.SetActive(true);
                 })
                 .Append(target.DOScale(to, duration).SetEase(ease));
         }

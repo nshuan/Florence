@@ -11,10 +11,11 @@ namespace Runtime.Effects
         [SerializeField] private Vector3 targetScale = Vector3.one;
         [SerializeField] private float duration;
         [SerializeField] private float delay;
+        [SerializeField] private Ease ease = Ease.Unset;
         
         public Tween GetTween()
         {
-            return DOTween.Sequence().SetDelay(delay)
+            return DOTween.Sequence().SetDelay(delay).SetEase(ease)
                 .Append(target.DOScale(targetScale, duration));
         }
     }

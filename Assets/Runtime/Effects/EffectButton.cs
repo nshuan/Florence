@@ -1,3 +1,4 @@
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -7,10 +8,14 @@ namespace Runtime.Effects
     {
         [SerializeField] private EffectChain effectChain;
 
+        private bool clickable = true;
 
         public void OnPointerClick(PointerEventData eventData)
         {
-            effectChain.PlayEffect();
+            if (!clickable) return;
+            
+            clickable = false;
+            effectChain.PlayEffect().OnComplete(() => clickable = true);
         }
     }
 }

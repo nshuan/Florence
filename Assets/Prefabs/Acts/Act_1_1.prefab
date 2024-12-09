@@ -1245,6 +1245,7 @@ GameObject:
   - component: {fileID: 8644544483263097152}
   - component: {fileID: 8644544483263097159}
   - component: {fileID: 8644544483263097153}
+  - component: {fileID: 1768332003902579095}
   m_Layer: 5
   m_Name: Puller
   m_TagString: Untagged
@@ -1323,6 +1324,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectChain: {fileID: 8644544484601005299}
+--- !u!114 &1768332003902579095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8644544483263097156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76159577ec5544e18690fa858effd604, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioClip: {fileID: 8300000, guid: 2992cd7ee1cd0bf43a8b1ed6b8388973, type: 3}
 --- !u!1 &8644544483285194478
 GameObject:
   m_ObjectHideFlags: 0
@@ -2849,6 +2863,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 139c84be5266440185a996c511bac90e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioPlay:
+    audioClip: {fileID: 8300000, guid: 2ffc6a551e5d21140a9e1b9f2c52d6be, type: 3}
 --- !u!1 &8644544483753654855
 GameObject:
   m_ObjectHideFlags: 0

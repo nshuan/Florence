@@ -1,5 +1,6 @@
 using System;
 using DG.Tweening;
+using Runtime.Audio;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -7,6 +8,8 @@ namespace Runtime.Chapters.Act1
 {
     public class ActionBrush : MonoBehaviour, IPointerDownHandler, IPointerMoveHandler, IPointerUpHandler
     {
+        [SerializeField] private AudioPlay audioPlay;
+        
         private bool IsHolding { get; set; }
         private Vector3 _mouseAnchor;
         private Vector3 _targetAnchor;
@@ -32,6 +35,7 @@ namespace Runtime.Chapters.Act1
             if (IsHolding)
             {
                 transform.localPosition = _targetAnchor + UnityEngine.Input.mousePosition - _mouseAnchor;
+                audioPlay.Play();
                 OnMove?.Invoke();
             }
         }
@@ -39,6 +43,7 @@ namespace Runtime.Chapters.Act1
         public void OnPointerUp(PointerEventData eventData)
         {
             IsHolding = false;
+            audioPlay.Stop();
             DoReturn();
         }
 

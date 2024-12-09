@@ -1684,8 +1684,8 @@ MonoBehaviour:
   - rid: 1833645807766863908
   - rid: 1833645807766863909
   - rid: 1833645807766863910
-  playOnEnable: 0
-  loop: 0
+  playOnEnable: 1
+  loop: 1
   references:
     version: 2
     RefIds:
@@ -2258,7 +2258,7 @@ RectTransform:
   m_GameObject: {fileID: 8644544483616971051}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.6, y: 1.6, z: 1.6}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 8644544483420546675}
@@ -2266,7 +2266,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -686, y: 336.5}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 211.18, y: 40.71}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8644544483616971063
@@ -2429,8 +2429,8 @@ MonoBehaviour:
   - rid: 3855360676580032521
   - rid: 3855360676580032522
   - rid: 3855360676580032523
-  playOnEnable: 0
-  loop: 0
+  playOnEnable: 1
+  loop: 1
   references:
     version: 2
     RefIds:
@@ -3611,35 +3611,19 @@ MonoBehaviour:
         subNodes:
         - rid: 1833645807766863886
         - rid: 1833645807766863888
-        - rid: 1833645807766863887
-        - rid: 1833645807766863889
+        - rid: 1833645864732065792
     - rid: 1833645807766863886
       type: {class: EffectFadeInImage, ns: Runtime.Chapters.Act1, asm: Assembly-CSharp}
       data:
         image: {fileID: 8644544482846606347}
         duration: 1
         delay: 0
-    - rid: 1833645807766863887
-      type: {class: EffectMoveLocal, ns: Runtime.Effects, asm: Assembly-CSharp}
-      data:
-        target: {fileID: 8644544482846606345}
-        targetPos: {fileID: 8644544483945651727}
-        duration: 0.5
-        delay: 1.5
     - rid: 1833645807766863888
       type: {class: EffectFadeIn, ns: Runtime.Chapters.Act1, asm: Assembly-CSharp}
       data:
         _canvasGroup: {fileID: 8644544484311282797}
         duration: 1
         delay: 0.8
-    - rid: 1833645807766863889
-      type: {class: EffectScale, ns: Runtime.Effects, asm: Assembly-CSharp}
-      data:
-        target: {fileID: 8644544482846606345}
-        targetScale: {x: 1, y: 1, z: 1}
-        duration: 0.5
-        delay: 1.5
-        ease: 0
     - rid: 1833645807766863890
       type: {class: EffectScaleIn, ns: Runtime.Effects, asm: Assembly-CSharp}
       data:
@@ -3649,6 +3633,28 @@ MonoBehaviour:
         ease: 27
         duration: 0.5
         delay: 0.5
+    - rid: 1833645864732065792
+      type: {class: JoinNode, ns: Runtime.Effects, asm: Assembly-CSharp}
+      data:
+        delay: 1.5
+        subNodes:
+        - rid: 1833645864732065793
+        - rid: 1833645864732065794
+    - rid: 1833645864732065793
+      type: {class: EffectMoveLocal, ns: Runtime.Effects, asm: Assembly-CSharp}
+      data:
+        target: {fileID: 8644544482846606345}
+        targetPos: {fileID: 8644544483945651727}
+        duration: 0.5
+        delay: 0
+    - rid: 1833645864732065794
+      type: {class: EffectScale, ns: Runtime.Effects, asm: Assembly-CSharp}
+      data:
+        target: {fileID: 8644544482846606345}
+        targetScale: {x: 1, y: 1, z: 1}
+        duration: 0.5
+        delay: 0
+        ease: 0
 --- !u!1 &8644544483987655704
 GameObject:
   m_ObjectHideFlags: 0
@@ -3764,7 +3770,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 22, y: 151.91}
+  m_SizeDelta: {x: 32, y: 151.91}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!222 &8644544484010246329
 CanvasRenderer:
@@ -4890,17 +4896,6 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 1833645807766863911
-      type: {class: LoopCallbackNode, ns: Runtime.Effects, asm: Assembly-CSharp}
-      data:
-        _effectToLoop:
-          rid: 1833645807766863913
-        loop: -1
-    - rid: 1833645807766863913
-      type: {class: EffectPlayAnimSprites, ns: Runtime.Chapters.Act1, asm: Assembly-CSharp}
-      data:
-        anims: {fileID: 8644544483397619223}
-        delay: 1
     - rid: 3855360694210002945
       type: {class: SequenceNode, ns: Runtime.Effects, asm: Assembly-CSharp}
       data:
@@ -4939,7 +4934,6 @@ MonoBehaviour:
         - rid: 3855360694210002951
         - rid: 3855360694210002952
         - rid: 3855360694210002953
-        - rid: 1833645807766863911
     - rid: 3855360694210002951
       type: {class: EffectFadeIn, ns: Runtime.Chapters.Act1, asm: Assembly-CSharp}
       data:
@@ -5250,20 +5244,8 @@ MonoBehaviour:
       data:
         delay: 0
         subNodes:
-        - rid: 3855360676580032524
         - rid: 3855360676580032527
         - rid: 3855360676580032526
-    - rid: 3855360676580032524
-      type: {class: LoopCallbackNode, ns: Runtime.Effects, asm: Assembly-CSharp}
-      data:
-        _effectToLoop:
-          rid: 3855360676580032525
-        loop: -1
-    - rid: 3855360676580032525
-      type: {class: EffectWakeUp, ns: Runtime.Chapters.Act1, asm: Assembly-CSharp}
-      data:
-        blinkAnim: {fileID: 8644544483629367773}
-        background: {fileID: 8644544483629367762}
     - rid: 3855360676580032526
       type: {class: EffectScaleIn, ns: Runtime.Effects, asm: Assembly-CSharp}
       data:

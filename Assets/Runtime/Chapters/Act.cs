@@ -9,12 +9,9 @@ namespace Runtime.Chapters
     {
         [SerializeField] private CanvasGroup canvasGroup;
         [SerializeField] private EffectChain transitionIn;
-
-        private Canvas canvas; 
             
         private void Awake()
         {
-            TryGetComponent<Canvas>(out canvas);
             canvasGroup.alpha = 0f;
         }
 
@@ -22,11 +19,6 @@ namespace Runtime.Chapters
         {
             gameObject.SetActive(true);
             return transitionIn.PlayEffect();
-        }
-
-        public void SetCam(Camera cam)
-        {
-            if (canvas) canvas.worldCamera = cam;
         }
     }
 }

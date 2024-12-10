@@ -1,5 +1,6 @@
 using System;
 using DG.Tweening;
+using Runtime.Audio;
 using Runtime.Effects;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -12,6 +13,7 @@ namespace Runtime.Chapters.Act1
         [SerializeField] private Image image;
         [SerializeField] private Sprite[] sprites;
         [SerializeField] private EffectChain completeEffect;
+        [SerializeField] private AudioClip blameAudio;
 
         private int currentIndex = 0;
         private bool clickable = true;
@@ -21,6 +23,11 @@ namespace Runtime.Chapters.Act1
         private void Awake()
         {
             image.sprite = sprites[0];
+        }
+
+        private void Start()
+        {
+            DOVirtual.DelayedCall(0.8f, () => AudioManager.Instance.PlayThirdSound(blameAudio, loop: true));
         }
 
         public void OnPointerClick(PointerEventData eventData)
@@ -36,6 +43,7 @@ namespace Runtime.Chapters.Act1
             if (currentIndex >= sprites.Length)
             {
                 isComplete = true;
+                AudioManager.Instance.StopThirdSound();
                 completeEffect.PlayEffect();
                 return;
             }

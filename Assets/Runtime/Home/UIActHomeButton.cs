@@ -13,6 +13,7 @@ namespace Runtime.Home
         
         public void OnPointerClick(PointerEventData eventData)
         {
+            AudioManager.Instance.VolumeOffBgMusic();
             Loading.Instance.LoadScene("InGame", OnActLoaded());    
         }
 

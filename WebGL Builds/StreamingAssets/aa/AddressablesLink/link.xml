@@ -1,5 +1,6 @@
 <linker>
   <assembly fullname="Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="Runtime.Audio.AudioPlayOnClick" preserve="all" />
     <type fullname="Runtime.Chapters.Act" preserve="all" />
     <type fullname="Runtime.Chapters.Act1.ActionBrush" preserve="all" />
     <type fullname="Runtime.Chapters.Act1.ActionSleep" preserve="all" />
@@ -16,23 +17,21 @@
     <type fullname="Runtime.Effects.EffectButton" preserve="all" />
     <type fullname="Runtime.Effects.EffectChain" preserve="all" />
     <type fullname="ScratcherInterpolate" preserve="all" />
+    <type fullname="Runtime.Audio.AudioPlay" preserve="nothing" serialized="true" />
     <type fullname="Runtime.Chapters.Act1.ActionTimePassing/ActionTimePassingStage" preserve="nothing" serialized="true" />
     <type fullname="Runtime.Chapters.Act1.AnimSpriteFrame" preserve="nothing" serialized="true" />
     <type fullname="Runtime.Chapters.Act1.EffectFadeIn" preserve="nothing" serialized="true" />
     <type fullname="Runtime.Chapters.Act1.EffectFadeInImage" preserve="nothing" serialized="true" />
     <type fullname="Runtime.Chapters.Act1.EffectFadeOut" preserve="nothing" serialized="true" />
     <type fullname="Runtime.Chapters.Act1.EffectFadeOutImage" preserve="nothing" serialized="true" />
-    <type fullname="Runtime.Chapters.Act1.EffectPlayAnimSprites" preserve="nothing" serialized="true" />
     <type fullname="Runtime.Chapters.Act1.EffectPullTrigger" preserve="nothing" serialized="true" />
     <type fullname="Runtime.Chapters.Act1.EffectTimer" preserve="nothing" serialized="true" />
-    <type fullname="Runtime.Chapters.Act1.EffectWakeUp" preserve="nothing" serialized="true" />
     <type fullname="Runtime.Effects.EffectMoveIn" preserve="nothing" serialized="true" />
     <type fullname="Runtime.Effects.EffectMoveLocal" preserve="nothing" serialized="true" />
     <type fullname="Runtime.Effects.EffectMoveOut" preserve="nothing" serialized="true" />
     <type fullname="Runtime.Effects.EffectScale" preserve="nothing" serialized="true" />
     <type fullname="Runtime.Effects.EffectScaleIn" preserve="nothing" serialized="true" />
     <type fullname="Runtime.Effects.JoinNode" preserve="nothing" serialized="true" />
-    <type fullname="Runtime.Effects.LoopCallbackNode" preserve="nothing" serialized="true" />
     <type fullname="Runtime.Effects.SequenceNode" preserve="nothing" serialized="true" />
   </assembly>
   <assembly fullname="Unity.Addressables, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" preserve="all">
@@ -44,6 +43,9 @@
     <type fullname="UnityEngine.ResourceManagement.ResourceProviders.InstanceProvider" preserve="all" />
     <type fullname="UnityEngine.ResourceManagement.ResourceProviders.LegacyResourcesProvider" preserve="all" />
     <type fullname="UnityEngine.ResourceManagement.ResourceProviders.SceneProvider" preserve="all" />
+  </assembly>
+  <assembly fullname="UnityEngine.AudioModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="UnityEngine.AudioClip" preserve="all" />
   </assembly>
   <assembly fullname="UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
     <type fullname="UnityEngine.GameObject" preserve="all" />

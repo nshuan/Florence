@@ -47,7 +47,7 @@ namespace Runtime.Clock
             var isReset = _currentAngle > 2 && (rotateAngle <= 2 || rotateAngle > _currentAngle);
             
             _currentAngle = rotateAngle;
-            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, 0, _currentAngle), Time.deltaTime * 120);
+            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, 0, _currentAngle), Time.deltaTime * 360);
             
             OnMove?.Invoke(deltaAngle);
             if (isReset)

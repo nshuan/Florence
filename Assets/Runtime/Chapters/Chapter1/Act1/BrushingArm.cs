@@ -1,4 +1,5 @@
 using System;
+using DG.Tweening;
 using UnityEngine;
 
 namespace Runtime.Chapters.Act1
@@ -22,16 +23,24 @@ namespace Runtime.Chapters.Act1
             _forwardDirection = (localPosEnd - localPosStart).normalized;
             _defaultSpeed = 1f;
             ActionBrush.OnMove += OnBrush;
+            ActionBrush.OnMouseUp += OnPauseBrush;
         }
 
         private void OnDestroy()
         {
             ActionBrush.OnMove -= OnBrush;
+            ActionBrush.OnMouseUp -= OnPauseBrush;
         }
 
         private void OnBrush()
         {
             UpdateArm();
+        }
+
+        private void OnPauseBrush()
+        {
+            _isForward = true;
+            arm.DOLocalMove(localPosStart, 0.2f);
         }
 
         private void UpdateArm()

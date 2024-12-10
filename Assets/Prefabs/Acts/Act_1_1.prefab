@@ -137,6 +137,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvasGroup: {fileID: 7518347248345800890}
   transitionIn: {fileID: 8644544484312280447}
+  bgMusic: {fileID: 8300000, guid: 3f79fbd8648cc4f4ebb3d98eabd8436d, type: 3}
 --- !u!225 &7518347248345800890
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -367,6 +368,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6d8147d015c10444182241191c008b11, type: 3}
   - {fileID: 21300000, guid: 8c4e460448f59af4eb446d91ad66db95, type: 3}
   completeEffect: {fileID: 8644544482971350054}
+  blameAudio: {fileID: 8300000, guid: b52397cf560a3f14f8d7a29acd9f65ff, type: 3}
 --- !u!114 &8644544482730845320
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1912,6 +1914,7 @@ GameObject:
   - component: {fileID: 8644544483461790509}
   - component: {fileID: 8644544483461790508}
   - component: {fileID: 8644544483461790499}
+  - component: {fileID: 7658520406007816040}
   m_Layer: 5
   m_Name: scratch_cover
   m_TagString: Untagged
@@ -1993,6 +1996,20 @@ MonoBehaviour:
   targetImage: {fileID: 8644544483461790508}
   transparencyRadius: 0.05
   maskTexture: {fileID: 8400000, guid: 25751dbf93037244eb9fab18f93a43d5, type: 2}
+--- !u!114 &7658520406007816040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8644544483461790497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba70c81839cc4a1f8019d547411e725b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioPlay:
+    audioClip: {fileID: 8300000, guid: 76ad112873d72b247a06b5f02c396d00, type: 3}
 --- !u!1 &8644544483520799302
 GameObject:
   m_ObjectHideFlags: 0
@@ -2786,6 +2803,7 @@ GameObject:
   - component: {fileID: 8644544483715960598}
   - component: {fileID: 8644544483715960597}
   - component: {fileID: 8644544483715960596}
+  - component: {fileID: 6325397316324643300}
   m_Layer: 5
   m_Name: brush
   m_TagString: Untagged
@@ -2861,6 +2879,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 139c84be5266440185a996c511bac90e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6325397316324643300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8644544483715960586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba70c81839cc4a1f8019d547411e725b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   audioPlay:
@@ -3648,7 +3678,7 @@ MonoBehaviour:
         to: {x: 1, y: 1, z: 1}
         ease: 27
         duration: 0.5
-        delay: 0.5
+        delay: 0
     - rid: 1833645864732065792
       type: {class: JoinNode, ns: Runtime.Effects, asm: Assembly-CSharp}
       data:

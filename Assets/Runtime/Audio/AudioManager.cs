@@ -41,9 +41,10 @@ namespace Runtime.Audio
                 .Play();
         }
 
-        public void PlaySound(AudioClip audioClip)
+        public void PlaySound(AudioClip audioClip, float volume = 0.5f, bool restart = false)
         {
-            if (sound.isPlaying) return;
+            if (!restart && sound.isPlaying) return;
+            sound.volume = volume;
             sound.PlayOneShot(audioClip);
         }
 

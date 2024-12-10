@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using Core;
 using DG.Tweening;
@@ -27,9 +28,24 @@ namespace Runtime
 
         private IEnumerator IELoadScene(string sceneName, IEnumerator loadedEnumerator)
         {
-            SceneManager.LoadSceneAsync(sceneName);
+            yield return SceneManager.LoadSceneAsync(sceneName);
             if (loadedEnumerator != null)
                 yield return loadedEnumerator;
+            yield return DoHide();
+        }
+
+        public void LoadScene(string sceneName, Action loadedAction = null)
+        {
+            DoShow().OnComplete(() =>
+            {
+                StartCoroutine(IELoadScene(sceneName, loadedAction));
+            });
+        }
+        
+        private IEnumerator IELoadScene(string sceneName, Action loadedAction)
+        {
+            yield return SceneManager.LoadSceneAsync(sceneName);
+            loadedAction?.Invoke();
             yield return DoHide();
         }
         

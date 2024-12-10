@@ -7,7 +7,7 @@ namespace Runtime.Audio
     {
         private void Start()
         {
-            AudioManager.Instance.PlayBgMusic();
+            AudioManager.Instance.SetBgMusicAndOn(AudioManifest.Default.BgMusicHome);
         }
     }
 }

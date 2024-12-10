@@ -6,7 +6,6 @@ namespace Runtime.Audio
     public class AudioManifest : ScriptableObject
     {
         [field: SerializeField] public AudioClip BgMusicHome { get; private set; }
-        [field: SerializeField] public AudioClip BgMusicC1A1 { get; private set; }
         
         #region Singleton
 

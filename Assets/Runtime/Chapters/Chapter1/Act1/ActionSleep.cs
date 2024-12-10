@@ -16,6 +16,11 @@ namespace Runtime.Chapters.Act1
             DoAction();
         }
 
+        private void OnDestroy()
+        {
+            transform.DOKill();
+        }
+
         private Tween DoAction()
         {
             transform.DOKill();
@@ -24,12 +29,12 @@ namespace Runtime.Chapters.Act1
                 letter.color = new Color(1f, 1f, 1f, 0.2f);
             }
 
-            var seq = DOTween.Sequence().SetLoops(-1);
+            var seq = DOTween.Sequence().SetTarget(transform).SetLoops(-1);
 
             for (var i = 0; i < zLetters.Length; i++)
             {
                 var letter = zLetters[i];
-                seq.Join(DOTween.Sequence()
+                seq.Join(DOTween.Sequence().SetTarget(transform)
                     .AppendInterval(delay * i)
                     .Append(letter.DOFade(1f, duration))
                     .AppendInterval(duration)

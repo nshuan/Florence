@@ -1,6 +1,7 @@
 <linker>
   <assembly fullname="Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
     <type fullname="Runtime.Audio.AudioPlayOnClick" preserve="all" />
+    <type fullname="Runtime.Audio.AudioPlayOnSlide" preserve="all" />
     <type fullname="Runtime.Chapters.Act" preserve="all" />
     <type fullname="Runtime.Chapters.Act1.ActionBrush" preserve="all" />
     <type fullname="Runtime.Chapters.Act1.ActionSleep" preserve="all" />
@@ -16,6 +17,7 @@
     <type fullname="Runtime.Clock.ClockMinuteHand" preserve="all" />
     <type fullname="Runtime.Effects.EffectButton" preserve="all" />
     <type fullname="Runtime.Effects.EffectChain" preserve="all" />
+    <type fullname="Runtime.Home.BackToHomeButton" preserve="all" />
     <type fullname="ScratcherInterpolate" preserve="all" />
     <type fullname="Runtime.Audio.AudioPlay" preserve="nothing" serialized="true" />
     <type fullname="Runtime.Chapters.Act1.ActionTimePassing/ActionTimePassingStage" preserve="nothing" serialized="true" />

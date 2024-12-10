@@ -8,12 +8,13 @@ namespace Runtime.Effects
     {
         [SerializeReference, SubclassSelector] private IEffectNode effect;
         [SerializeField] private int loop = 1;
+        [SerializeField] private LoopType loopType;
 
         private void OnEnable()
         {
             DOTween.Sequence().SetTarget(transform)
                 .Append(effect.GetTween())
-                .SetLoops(loop).Play();
+                .SetLoops(loop, loopType).Play();
         }
 
         private void OnDisable()

@@ -1,5 +1,6 @@
 using System;
 using DG.Tweening;
+using Runtime.Audio;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -13,6 +14,7 @@ namespace Runtime.Chapters.Act1
         private Camera _mainCam;
 
         public static event Action OnMove;
+        public static event Action OnMouseUp;
         
         private void Awake()
         {
@@ -31,7 +33,8 @@ namespace Runtime.Chapters.Act1
         {
             if (IsHolding)
             {
-                transform.localPosition = _targetAnchor + UnityEngine.Input.mousePosition - _mouseAnchor;
+                var distance = UnityEngine.Input.mousePosition - _mouseAnchor;
+                transform.localPosition = _targetAnchor + distance;
                 OnMove?.Invoke();
             }
         }
@@ -39,6 +42,7 @@ namespace Runtime.Chapters.Act1
         public void OnPointerUp(PointerEventData eventData)
         {
             IsHolding = false;
+            OnMouseUp?.Invoke();
             DoReturn();
         }
 

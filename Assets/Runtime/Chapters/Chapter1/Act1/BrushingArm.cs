@@ -1,57 +1,62 @@
 using System;
+using DG.Tweening;
 using UnityEngine;
 
 namespace Runtime.Chapters.Act1
 {
     public class BrushingArm : MonoBehaviour
     {
-        [SerializeField] private GameObject[] frames;
-        [SerializeField] private int fps;
+        [SerializeField] private Transform arm;
+        [SerializeField] private Vector3 localPosStart;
+        [SerializeField] private Vector3 localPosEnd;
+        [SerializeField] private int speedScale;
 
-        private int _currentFrame;
+        private bool _isForward;
+        private Vector3 _forwardDirection;
+        private float _defaultSpeed;
+        private float Speed => _defaultSpeed * speedScale;
         
         private void Awake()
         {
-            frames[0].SetActive(true);
-            _currentFrame = 0;
-            _cooldown = MaxCd;
-            for (var i = 1; i < frames.Length; i++)
-            {
-                frames[i].SetActive(false);
-            }
-
+            arm.localPosition = localPosStart;
+            _isForward = true;
+            _forwardDirection = (localPosEnd - localPosStart).normalized;
+            _defaultSpeed = 1f;
             ActionBrush.OnMove += OnBrush;
-        }
-
-        private float MaxCd => 1f / fps;
-        private float _cooldown;
-        private void Update()
-        {
-            if (_cooldown > 0) _cooldown -= Time.deltaTime;
+            ActionBrush.OnMouseUp += OnPauseBrush;
         }
 
         private void OnDestroy()
         {
             ActionBrush.OnMove -= OnBrush;
+            ActionBrush.OnMouseUp -= OnPauseBrush;
         }
 
         private void OnBrush()
         {
-            if (_cooldown <= 0)
-            {
-                UpdateFrame();
-                _cooldown = MaxCd;
-            }
+            UpdateArm();
         }
 
-        private void UpdateFrame()
+        private void OnPauseBrush()
         {
-            var nextFrame = _currentFrame + 1;
-            if (nextFrame >= frames.Length) nextFrame = 0;
-            
-            frames[_currentFrame].SetActive(false);
-            frames[nextFrame].SetActive(true);
-            _currentFrame = nextFrame;
+            _isForward = true;
+            arm.DOLocalMove(localPosStart, 0.2f);
+        }
+
+        private void UpdateArm()
+        {
+            if (_isForward)
+            {
+                arm.localPosition += _forwardDirection * Speed;
+                if (Vector2.Distance(localPosStart, localPosEnd) <= Vector2.Distance(arm.localPosition, localPosEnd))
+                    _isForward = false;
+            }
+            else
+            {
+                arm.localPosition -= _forwardDirection * Speed;
+                if (Vector2.Distance(localPosEnd, localPosStart) <= Vector2.Distance(arm.localPosition, localPosEnd))
+                    _isForward = true;
+            }
         }
     }
 }

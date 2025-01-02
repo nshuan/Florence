@@ -58,7 +58,7 @@ namespace Runtime.Chapters.Act1
         [Serializable]
         public class ActionTimePassingStage
         {
-            public Graphic graphic;
+            public CanvasGroup graphic;
             public int hourToHide;
         }
     }

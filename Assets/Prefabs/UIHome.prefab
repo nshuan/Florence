@@ -2358,7 +2358,6 @@ GameObject:
   - component: {fileID: 5734026704630149607}
   - component: {fileID: 5734026704630149604}
   - component: {fileID: 5734026704630149605}
-  - component: {fileID: 5734026704630149606}
   m_Layer: 5
   m_Name: Character
   m_TagString: Untagged
@@ -2473,46 +2472,6 @@ MonoBehaviour:
       data:
         sprite: {fileID: 21300000, guid: 3b62897826b6aac4aabaa29b8034b911, type: 3}
         duration: 1
---- !u!114 &5734026704630149606
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5734026704630149627}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 861d1d11c58843158f4af453385a895c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  effect:
-    rid: 1833645864732065813
-  loop: -1
-  loopType: 1
-  references:
-    version: 2
-    RefIds:
-    - rid: 1833645864732065813
-      type: {class: SequenceNode, ns: Runtime.Effects, asm: Assembly-CSharp}
-      data:
-        delay: 0
-        nodes:
-        - rid: 1833645864732065814
-        - rid: 1833645864732065815
-    - rid: 1833645864732065814
-      type: {class: EffectMove, ns: Runtime.Effects, asm: Assembly-CSharp}
-      data:
-        target: {fileID: 5734026704630149626}
-        targetPos: {fileID: 5734026705171692937}
-        duration: 3
-        delay: 0
-    - rid: 1833645864732065815
-      type: {class: EffectMove, ns: Runtime.Effects, asm: Assembly-CSharp}
-      data:
-        target: {fileID: 5734026704630149626}
-        targetPos: {fileID: 5734026703922433550}
-        duration: 4
-        delay: 0
 --- !u!1 &5734026704636864712
 GameObject:
   m_ObjectHideFlags: 0
@@ -3399,6 +3358,7 @@ GameObject:
   - component: {fileID: 5734026704835773630}
   - component: {fileID: 5734026704835773624}
   - component: {fileID: 5734026704835773625}
+  - component: {fileID: 4598696953040577192}
   m_Layer: 5
   m_Name: Bg
   m_TagString: Untagged
@@ -3464,6 +3424,46 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &4598696953040577192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5734026704835773631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 861d1d11c58843158f4af453385a895c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effect:
+    rid: 1833645864732065813
+  loop: -1
+  loopType: 1
+  references:
+    version: 2
+    RefIds:
+    - rid: 1833645864732065813
+      type: {class: SequenceNode, ns: Runtime.Effects, asm: Assembly-CSharp}
+      data:
+        delay: 0
+        nodes:
+        - rid: 1833645864732065814
+        - rid: 1833645864732065815
+    - rid: 1833645864732065814
+      type: {class: EffectMove, ns: Runtime.Effects, asm: Assembly-CSharp}
+      data:
+        target: {fileID: 5734026704630149626}
+        targetPos: {fileID: 5734026705171692937}
+        duration: 3
+        delay: 0
+    - rid: 1833645864732065815
+      type: {class: EffectMove, ns: Runtime.Effects, asm: Assembly-CSharp}
+      data:
+        target: {fileID: 5734026704630149626}
+        targetPos: {fileID: 5734026703922433550}
+        duration: 4
+        delay: 0
 --- !u!1 &5734026704911443379
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,9 +8,12 @@ namespace Runtime.Chapters.Act1
     public class ActionEatFood : MonoBehaviour, IPointerClickHandler
     {
         public Action<ActionEatFood> onEatFood;
+        public bool IsBlock { get; set; } = false;
         
         public void OnPointerClick(PointerEventData eventData)
         {
+            if (IsBlock) return;
+            
             DoDisappear().Play().OnComplete(() => gameObject.SetActive(false));
             
             onEatFood?.Invoke(this);    

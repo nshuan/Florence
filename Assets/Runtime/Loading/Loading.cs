@@ -20,6 +20,7 @@ namespace Runtime
 
         public void LoadScene(string sceneName, IEnumerator loadedEnumerator = null)
         {
+            DOTween.KillAll();
             DoShow().OnComplete(() =>
             {
                 StartCoroutine(IELoadScene(sceneName, loadedEnumerator));
@@ -36,6 +37,7 @@ namespace Runtime
 
         public void LoadScene(string sceneName, Action loadedAction = null)
         {
+            DOTween.KillAll();
             DoShow().OnComplete(() =>
             {
                 StartCoroutine(IELoadScene(sceneName, loadedAction));

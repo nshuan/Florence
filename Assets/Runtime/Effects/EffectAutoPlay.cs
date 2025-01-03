@@ -17,7 +17,7 @@ namespace Runtime.Effects
                 .SetLoops(loop, loopType).Play();
         }
 
-        private void OnDisable()
+        private void OnDestroy()
         {
             transform.DOKill();
         }

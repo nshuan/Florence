@@ -6551,23 +6551,8 @@ MonoBehaviour:
       data:
         delay: 0
         subNodes:
-        - rid: 1833645807766863899
-        - rid: 1833645807766863898
+        - rid: 3656701967168438303
         - rid: 1833645807766863901
-    - rid: 1833645807766863898
-      type: {class: EffectMoveOut, ns: Runtime.Effects, asm: Assembly-CSharp}
-      data:
-        target: {fileID: 8644544484599223531}
-        targetPos: {fileID: 8644544483651687309}
-        duration: 1.5
-        delay: 0
-    - rid: 1833645807766863899
-      type: {class: EffectMoveIn, ns: Runtime.Effects, asm: Assembly-CSharp}
-      data:
-        target: {fileID: 8644544484509152453}
-        fromTargetPos: {fileID: 8644544484465664633}
-        duration: 1.5
-        delay: 0
     - rid: 1833645807766863901
       type: {class: EffectTimer, ns: Runtime.Chapters.Act1, asm: Assembly-CSharp}
       data:
@@ -6608,6 +6593,27 @@ MonoBehaviour:
         image: {fileID: 3163497488748793426}
         duration: 0.5
         delay: 2
+    - rid: 3656701967168438303
+      type: {class: JoinNode, ns: Runtime.Effects, asm: Assembly-CSharp}
+      data:
+        delay: 0
+        subNodes:
+        - rid: 3656701967168438304
+        - rid: 3656701967168438305
+    - rid: 3656701967168438304
+      type: {class: EffectMoveIn, ns: Runtime.Effects, asm: Assembly-CSharp}
+      data:
+        target: {fileID: 8644544484509152453}
+        fromTargetPos: {fileID: 8644544484465664633}
+        duration: 1.5
+        delay: 0
+    - rid: 3656701967168438305
+      type: {class: EffectMoveOut, ns: Runtime.Effects, asm: Assembly-CSharp}
+      data:
+        target: {fileID: 8644544484599223531}
+        targetPos: {fileID: 8644544483651687309}
+        duration: 1.5
+        delay: 0
 --- !u!1 &8644544482978508067
 GameObject:
   m_ObjectHideFlags: 0
@@ -7102,51 +7108,6 @@ MonoBehaviour:
   duration: 0.5
   delay: 0.2
   firstDelay: 0
---- !u!1 &8644544483346319578
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8644544483346319579}
-  - component: {fileID: 8644544483346319524}
-  m_Layer: 5
-  m_Name: HourPlaceholder
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &8644544483346319579
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8644544483346319578}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 8644544483420546675}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -666, y: 336.5}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &8644544483346319524
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8644544483346319578}
-  m_CullTransparentMesh: 1
 --- !u!1 &8644544483365669262
 GameObject:
   m_ObjectHideFlags: 0
@@ -7371,7 +7332,6 @@ RectTransform:
   m_Children:
   - {fileID: 8644544483303441556}
   - {fileID: 8644544483567965710}
-  - {fileID: 8644544483346319579}
   - {fileID: 8644544483965221745}
   m_Father: {fileID: 8448247025350440982}
   m_RootOrder: 5
@@ -7915,7 +7875,7 @@ RectTransform:
   m_GameObject: {fileID: 8644544483616971051}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.6, y: 1.6, z: 1.6}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 8644544483921006633}
@@ -7923,7 +7883,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -666, y: 336.5}
   m_SizeDelta: {x: 189, y: 36}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8644544483616971063
@@ -9150,7 +9110,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8644544483420546675}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -10509,7 +10469,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _effectNodes:
   - rid: 3855360694210002945
-  - rid: 3855360694210002949
   - rid: 3607306395644592146
   - rid: 3855360785723162632
   references:
@@ -10521,29 +10480,19 @@ MonoBehaviour:
         delay: 0.5
         subNodes:
         - rid: 3607306395644592147
-        - rid: 3607306395644592148
-        - rid: 3607306395644592149
+        - rid: 3656701967168438306
     - rid: 3607306395644592147
       type: {class: EffectFadeIn, ns: Runtime.Chapters.Act1, asm: Assembly-CSharp}
       data:
         _canvasGroup: {fileID: 8644544483567965711}
         duration: 1
         delay: 0
-    - rid: 3607306395644592148
-      type: {class: EffectMoveLocal, ns: Runtime.Effects, asm: Assembly-CSharp}
+    - rid: 3656701967168438306
+      type: {class: EffectFadeInImage, ns: Runtime.Chapters.Act1, asm: Assembly-CSharp}
       data:
-        target: {fileID: 8644544483616971060}
-        targetPos: {fileID: 8644544483346319579}
+        image: {fileID: 8644544483616971062}
         duration: 0.5
         delay: 0
-    - rid: 3607306395644592149
-      type: {class: EffectScale, ns: Runtime.Effects, asm: Assembly-CSharp}
-      data:
-        target: {fileID: 8644544483616971060}
-        targetScale: {x: 1, y: 1, z: 1}
-        duration: 0.5
-        delay: 0
-        ease: 0
     - rid: 3855360694210002945
       type: {class: SequenceNode, ns: Runtime.Effects, asm: Assembly-CSharp}
       data:
@@ -10566,12 +10515,6 @@ MonoBehaviour:
       type: {class: EffectFadeOutImage, ns: Runtime.Chapters.Act1, asm: Assembly-CSharp}
       data:
         image: {fileID: 8644544484035052758}
-        duration: 1
-        delay: 0
-    - rid: 3855360694210002949
-      type: {class: EffectFadeInImage, ns: Runtime.Chapters.Act1, asm: Assembly-CSharp}
-      data:
-        image: {fileID: 8644544483616971062}
         duration: 1
         delay: 0
     - rid: 3855360785723162632

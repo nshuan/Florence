@@ -14,8 +14,8 @@ namespace Runtime.Effects
         
         public Tween GetTween()
         {
-            return DOTween.Sequence().SetDelay(delay)
-                .Append(target.DOMove(targetPos.position, duration))
+            return DOTween.Sequence().SetDelay(delay).SetEase(Ease.Linear)
+                .Append(target.DOMove(targetPos.position, duration).SetEase(Ease.Linear))
                 .AppendCallback(() => target.gameObject.SetActive(false));
         }
     }

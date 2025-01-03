@@ -642,6 +642,7 @@ GameObject:
   - component: {fileID: 8198955781564115825}
   - component: {fileID: 184224834384171555}
   - component: {fileID: 1963786323226668788}
+  - component: {fileID: 2596026293311840121}
   m_Layer: 5
   m_Name: food (1)
   m_TagString: Untagged
@@ -719,6 +720,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9aa88bf2f8f9454588e7f60a9da79325, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2596026293311840121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1834998867980071987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4ef3c04929541d39f85ebf1c78c83bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioClip: {fileID: 8300000, guid: e486d83ef2415834b8cc4de29c047717, type: 3}
+  duration: 0.6
+  volumeScale: 4
 --- !u!1 &1965822036711517033
 GameObject:
   m_ObjectHideFlags: 0
@@ -1312,6 +1328,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioPlay:
     audioClip: {fileID: 8300000, guid: 2ffc6a551e5d21140a9e1b9f2c52d6be, type: 3}
+  volumeScale: 1
 --- !u!1 &2758825284804218975
 GameObject:
   m_ObjectHideFlags: 0
@@ -1413,6 +1430,7 @@ GameObject:
   - component: {fileID: 5032229369514162197}
   - component: {fileID: 8572198905553063654}
   - component: {fileID: 1241010479125409065}
+  - component: {fileID: 6315906842665468053}
   m_Layer: 5
   m_Name: food (3)
   m_TagString: Untagged
@@ -1490,6 +1508,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9aa88bf2f8f9454588e7f60a9da79325, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6315906842665468053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2911377306195372317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4ef3c04929541d39f85ebf1c78c83bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioClip: {fileID: 8300000, guid: e486d83ef2415834b8cc4de29c047717, type: 3}
+  duration: 0.6
+  volumeScale: 4
 --- !u!1 &3088129435946424145
 GameObject:
   m_ObjectHideFlags: 0
@@ -1857,6 +1890,7 @@ GameObject:
   - component: {fileID: 4637197165302354590}
   - component: {fileID: 55401580858048939}
   - component: {fileID: 53821624450101335}
+  - component: {fileID: 1995020567315089210}
   m_Layer: 5
   m_Name: food (4)
   m_TagString: Untagged
@@ -1934,6 +1968,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9aa88bf2f8f9454588e7f60a9da79325, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1995020567315089210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3982052452858519187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4ef3c04929541d39f85ebf1c78c83bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioClip: {fileID: 8300000, guid: e486d83ef2415834b8cc4de29c047717, type: 3}
+  duration: 0.6
+  volumeScale: 4
 --- !u!1 &4412205838897248441
 GameObject:
   m_ObjectHideFlags: 0
@@ -2023,6 +2072,7 @@ GameObject:
   - component: {fileID: 350556812251364839}
   - component: {fileID: 3831494816401481177}
   - component: {fileID: 2330878502282770274}
+  - component: {fileID: 3022343450836362392}
   m_Layer: 5
   m_Name: food (5)
   m_TagString: Untagged
@@ -2100,6 +2150,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9aa88bf2f8f9454588e7f60a9da79325, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3022343450836362392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4529377489860820811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4ef3c04929541d39f85ebf1c78c83bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioClip: {fileID: 8300000, guid: e486d83ef2415834b8cc4de29c047717, type: 3}
+  duration: 0.6
+  volumeScale: 4
 --- !u!1 &4948384568353386024
 GameObject:
   m_ObjectHideFlags: 0
@@ -2797,6 +2862,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioPlay:
     audioClip: {fileID: 8300000, guid: 2ffc6a551e5d21140a9e1b9f2c52d6be, type: 3}
+  volumeScale: 3
 --- !u!1 &5682998341678977533
 GameObject:
   m_ObjectHideFlags: 0
@@ -2809,6 +2875,7 @@ GameObject:
   - component: {fileID: 7504415387463866824}
   - component: {fileID: 6289581197714934815}
   - component: {fileID: 5869415097246481017}
+  - component: {fileID: 3425727185473104954}
   m_Layer: 5
   m_Name: next button
   m_TagString: Untagged
@@ -2887,6 +2954,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectChain: {fileID: 8644544484225287003}
+--- !u!114 &3425727185473104954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5682998341678977533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76159577ec5544e18690fa858effd604, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioClip: {fileID: 8300000, guid: cbc063655059b1349b0460e47e965a13, type: 3}
+  volume: 0.5
 --- !u!1 &5781841438389889963
 GameObject:
   m_ObjectHideFlags: 0
@@ -5019,6 +5100,7 @@ GameObject:
   - component: {fileID: 5994630973640879087}
   - component: {fileID: 453203241677019068}
   - component: {fileID: 1071094830573409558}
+  - component: {fileID: 7419823994702994094}
   m_Layer: 5
   m_Name: food (6)
   m_TagString: Untagged
@@ -5096,6 +5178,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9aa88bf2f8f9454588e7f60a9da79325, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7419823994702994094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8374765521418201735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4ef3c04929541d39f85ebf1c78c83bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioClip: {fileID: 8300000, guid: e486d83ef2415834b8cc4de29c047717, type: 3}
+  duration: 0.6
+  volumeScale: 4
 --- !u!1 &8413997179085324659
 GameObject:
   m_ObjectHideFlags: 0
@@ -6605,7 +6702,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8644544483126964792
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6683,7 +6780,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   effect:
     rid: 3656701967168438296
-  loop: 1
+  loop: -1
   loopType: 1
   references:
     version: 2
@@ -6701,34 +6798,34 @@ MonoBehaviour:
       type: {class: EffectScale, ns: Runtime.Effects, asm: Assembly-CSharp}
       data:
         target: {fileID: 8644544483629367762}
-        targetScale: {x: 1.05, y: 1.05, z: 1.05}
-        duration: 2
+        targetScale: {x: 1.04, y: 1.04, z: 1.04}
+        duration: 6
         delay: 2
-        ease: 0
+        ease: 1
     - rid: 3656701967168438298
       type: {class: EffectScale, ns: Runtime.Effects, asm: Assembly-CSharp}
       data:
         target: {fileID: 8644544483629367762}
-        targetScale: {x: 1.02, y: 1.02, z: 1.02}
-        duration: 2
-        delay: 1
-        ease: 0
+        targetScale: {x: 1.016, y: 1.016, z: 1.016}
+        duration: 4
+        delay: 0
+        ease: 1
     - rid: 3656701967168438299
       type: {class: EffectScale, ns: Runtime.Effects, asm: Assembly-CSharp}
       data:
         target: {fileID: 8644544483629367762}
-        targetScale: {x: 1.04, y: 1.04, z: 1.04}
-        duration: 2
-        delay: 1
-        ease: 0
+        targetScale: {x: 1.03, y: 1.03, z: 1.03}
+        duration: 4
+        delay: 0
+        ease: 1
     - rid: 3656701967168438300
       type: {class: EffectScale, ns: Runtime.Effects, asm: Assembly-CSharp}
       data:
         target: {fileID: 8644544483629367762}
         targetScale: {x: 1, y: 1, z: 1}
-        duration: 2
-        delay: 1
-        ease: 0
+        duration: 5
+        delay: 0
+        ease: 1
 --- !u!1 &8644544483263097156
 GameObject:
   m_ObjectHideFlags: 0
@@ -7522,6 +7619,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioPlay:
     audioClip: {fileID: 8300000, guid: 76ad112873d72b247a06b5f02c396d00, type: 3}
+  volumeScale: 1
 --- !u!1 &8644544483520799302
 GameObject:
   m_ObjectHideFlags: 0
@@ -9223,6 +9321,7 @@ GameObject:
   - component: {fileID: 8644544484010246329}
   - component: {fileID: 8644544484010246328}
   - component: {fileID: 8644544484010246335}
+  - component: {fileID: 2361809355742316455}
   m_Layer: 5
   m_Name: MInuteHand
   m_TagString: Untagged
@@ -9302,6 +9401,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pivot: {fileID: 8644544484646344125}
+--- !u!114 &2361809355742316455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8644544484010246333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba70c81839cc4a1f8019d547411e725b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioPlay:
+    audioClip: {fileID: 8300000, guid: 64b9cbd7ed574124591ae0157ea74172, type: 3}
+  volumeScale: 3
 --- !u!1 &8644544484019822143
 GameObject:
   m_ObjectHideFlags: 0
@@ -9940,6 +10054,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8644544484311282796}
   - component: {fileID: 8644544484311282797}
+  - component: {fileID: 7915849740946716273}
   m_Layer: 5
   m_Name: Content
   m_TagString: Untagged
@@ -9981,6 +10096,22 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &7915849740946716273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8644544484311282787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 167447b922d74c85be8e252d65f7f447, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioPlay:
+    audioClip: {fileID: 8300000, guid: e781333a42b93104b9bee3db21f8ff7f, type: 3}
+  volumeScale: 2
+  loop: 1
 --- !u!1 &8644544484312280445
 GameObject:
   m_ObjectHideFlags: 0
@@ -10740,12 +10871,19 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
+    - rid: 3656701967168438302
+      type: {class: EffectFadeInImage, ns: Runtime.Chapters.Act1, asm: Assembly-CSharp}
+      data:
+        image: {fileID: 8644544483126964793}
+        duration: 0.01
+        delay: 0
     - rid: 3855360676580032513
       type: {class: SequenceNode, ns: Runtime.Effects, asm: Assembly-CSharp}
       data:
         delay: 0
         nodes:
         - rid: 3855360676580032514
+        - rid: 3656701967168438302
         - rid: 3855360676580032515
         - rid: 3855360676580032516
     - rid: 3855360676580032514
@@ -11126,6 +11264,7 @@ GameObject:
   - component: {fileID: 4957594434538846477}
   - component: {fileID: 385595688512968269}
   - component: {fileID: 3310678263622226529}
+  - component: {fileID: 8124637097076372689}
   m_Layer: 5
   m_Name: food (2)
   m_TagString: Untagged
@@ -11203,6 +11342,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9aa88bf2f8f9454588e7f60a9da79325, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8124637097076372689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9123874279828221828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4ef3c04929541d39f85ebf1c78c83bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioClip: {fileID: 8300000, guid: e486d83ef2415834b8cc4de29c047717, type: 3}
+  duration: 0.6
+  volumeScale: 4
 --- !u!1 &9219791194173713729
 GameObject:
   m_ObjectHideFlags: 0

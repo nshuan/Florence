@@ -8,10 +8,10 @@ namespace Runtime.Audio
     {
         public AudioClip audioClip;
 
-        public void Play()
+        public void Play(float volumeScale)
         {
             if (audioClip == null) return;
-            AudioManager.Instance.PlaySound(audioClip);
+            AudioManager.Instance.PlaySound(audioClip, volumeScale);
         }
 
         public void Stop()

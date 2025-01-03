@@ -6552,12 +6552,6 @@ MonoBehaviour:
         delay: 0
         subNodes:
         - rid: 3656701967168438303
-        - rid: 1833645807766863901
-    - rid: 1833645807766863901
-      type: {class: EffectTimer, ns: Runtime.Chapters.Act1, asm: Assembly-CSharp}
-      data:
-        timerAnims: {fileID: 8644544483939544425}
-        delay: 1
     - rid: 1833645807766863902
       type: {class: JoinNode, ns: Runtime.Effects, asm: Assembly-CSharp}
       data:

@@ -1,10 +1,14 @@
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Runtime.Chapters.Act2.Puzzle
 {
     public class PuzzleHelper
     {
         private readonly Dictionary<IPuzzlePiece, IPuzzlePiece[]> _pieceGroupMap = new();
+
+        public int GroupCount => _pieceGroupMap.Keys.GroupBy((key) => _pieceGroupMap[key]).Count();
+        public int PiecesInGroupCount => _pieceGroupMap.Keys.Count;
 
         public void ConnectGroup(IPuzzlePiece piece1, IPuzzlePiece piece2)
         {

@@ -13,8 +13,8 @@ namespace Runtime.Chapters.Act2.Puzzle
         IPuzzlePiece Down { get; set; }
         IPuzzlePiece Right { get; set; }
         void Initialize();
+        void Disable();
         bool CanConnect(IPuzzlePiece target);
-        List<IPuzzlePiece> ConnectedPieces { get; }
         Dictionary<IPuzzlePiece, Vector2> LinkDistanceMap { get; }
     }
 }

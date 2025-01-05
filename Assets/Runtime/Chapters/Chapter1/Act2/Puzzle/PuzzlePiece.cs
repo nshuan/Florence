@@ -21,7 +21,6 @@ namespace Runtime.Chapters.Act2.Puzzle
         public IPuzzlePiece Right { get; set; }
 
         public Dictionary<IPuzzlePiece, Vector2> LinkDistanceMap { get; private set; }
-        public List<IPuzzlePiece> ConnectedPieces { get; set; } = new List<IPuzzlePiece>();
 
         public void Initialize()
         {
@@ -35,9 +34,13 @@ namespace Runtime.Chapters.Act2.Puzzle
             if (Left is not null) LinkDistanceMap.Add(Left, Left.Transform.localPosition - transform.localPosition);
             if (Down is not null) LinkDistanceMap.Add(Down, Down.Transform.localPosition - transform.localPosition);
             if (Right is not null) LinkDistanceMap.Add(Right, Right.Transform.localPosition - transform.localPosition);
-
-            ConnectedPieces = new List<IPuzzlePiece>();
         }
+
+        public void Disable()
+        {
+            this.enabled = false;
+        }
+
 
         public bool CanConnect(IPuzzlePiece target)
         {

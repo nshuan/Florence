@@ -4,15 +4,20 @@ using System.Linq;
 using DG.Tweening;
 using EasyButtons;
 using Runtime.Core;
+using Runtime.Effects;
 using Unity.Collections;
 using UnityEngine;
 
 namespace Runtime.Chapters.Act2.Puzzle
 {
-    public class PuzzleBoard : MonoBehaviour
+    public class PuzzleBoard : MonoBehaviour, IProgress
     {
-        [SerializeField] private Vector2 pieceSize;
+        private const float PieceMoveDuration = 0.2f;
         
+        [SerializeField] private Vector2 pieceSize;
+
+        public Action OnComplete { get; set; }
+        private Vector3 firstPieceTargetPosition;
         private IPuzzlePiece[] pieces;
         public PuzzleHelper PieceGroupHelper { get; private set; } = new PuzzleHelper();
 
@@ -25,6 +30,7 @@ namespace Runtime.Chapters.Act2.Puzzle
         private void Initialize()
         {
             pieces = GetComponentsInChildren<IPuzzlePiece>();
+            firstPieceTargetPosition = pieces[0].Transform.localPosition;
             foreach (var piece in pieces)
             {
                 piece.Initialize();
@@ -40,82 +46,127 @@ namespace Runtime.Chapters.Act2.Puzzle
             }
         }
 
-        public void Check(IPuzzlePiece pieceToCheck)
+        public void Check(IPuzzlePiece checkPiece)
         {
-            const float connectDuration = 0.2f;
-            
+            var groupToCheck = PieceGroupHelper.PieceGroup(checkPiece);
+                
             BlockUI.Instance.Block();
             
             var seq = DOTween.Sequence();
 
-            var connectList = new List<IPuzzlePiece>();
-            if (pieceToCheck.Up != null && pieceToCheck.CanConnect(pieceToCheck.Up))
+            var connectedGroups = new List<IPuzzlePiece[]>();
+
+            foreach (var pieceToCheck in groupToCheck)
             {
-                var upDistance = (Vector2)pieceToCheck.Transform.localPosition +
-                                 pieceToCheck.LinkDistanceMap[pieceToCheck.Up] - 
-                                 (Vector2)pieceToCheck.Up.Transform.localPosition;
-
-                foreach (var piece in PieceGroupHelper.PieceGroup(pieceToCheck.Up))
+                if (pieceToCheck.Up != null && pieceToCheck.CanConnect(pieceToCheck.Up))
                 {
-                    seq.Join(piece.Transform.DOLocalMove(upDistance, connectDuration).SetRelative());
-                }
-                
-                connectList.Add(pieceToCheck.Up);
-            }
+                    var upDistance = (Vector2)pieceToCheck.Transform.localPosition +
+                                     pieceToCheck.LinkDistanceMap[pieceToCheck.Up] - 
+                                     (Vector2)pieceToCheck.Up.Transform.localPosition;
 
-            if (pieceToCheck.Left != null && pieceToCheck.CanConnect(pieceToCheck.Left))
-            {
-                var leftDistance = (Vector2)pieceToCheck.Transform.localPosition +
-                                 pieceToCheck.LinkDistanceMap[pieceToCheck.Left] - 
-                                 (Vector2)pieceToCheck.Left.Transform.localPosition;
-
-                foreach (var piece in PieceGroupHelper.PieceGroup(pieceToCheck.Left))
-                {
-                    seq.Join(piece.Transform.DOLocalMove(leftDistance, connectDuration).SetRelative());
-                }
-                
-                connectList.Add(pieceToCheck.Left);
-            }
-
-            if (pieceToCheck.Down != null && pieceToCheck.CanConnect(pieceToCheck.Down))
-            {
-                var downDistance = (Vector2)pieceToCheck.Transform.localPosition +
-                                 pieceToCheck.LinkDistanceMap[pieceToCheck.Down] - 
-                                 (Vector2)pieceToCheck.Down.Transform.localPosition;
-
-                foreach (var piece in PieceGroupHelper.PieceGroup(pieceToCheck.Down))
-                {
-                    seq.Join(piece.Transform.DOLocalMove(downDistance, connectDuration).SetRelative());
-                }
-                
-                connectList.Add(pieceToCheck.Down);
-            }
-
-            if (pieceToCheck.Right != null && pieceToCheck.CanConnect(pieceToCheck.Right))
-            {
-                var rightDistance = (Vector2)pieceToCheck.Transform.localPosition +
-                                   pieceToCheck.LinkDistanceMap[pieceToCheck.Right] - 
-                                   (Vector2)pieceToCheck.Right.Transform.localPosition;
-
-                foreach (var piece in PieceGroupHelper.PieceGroup(pieceToCheck.Right))
-                {
-                    seq.Join(piece.Transform.DOLocalMove(rightDistance, connectDuration).SetRelative());
+                    var group = PieceGroupHelper.PieceGroup(pieceToCheck.Up);
+                    
+                    if (!group.Contains(pieceToCheck) && !connectedGroups.Contains(group))
+                    {
+                        foreach (var piece in group)
+                        {
+                            seq.Join(piece.Transform.DOLocalMove(upDistance, PieceMoveDuration).SetRelative());
+                        }
+                        
+                        connectedGroups.Add(group);
+                    }  
                 }
 
-                connectList.Add(pieceToCheck.Right);
+                if (pieceToCheck.Left != null && pieceToCheck.CanConnect(pieceToCheck.Left))
+                {
+                    var leftDistance = (Vector2)pieceToCheck.Transform.localPosition +
+                                     pieceToCheck.LinkDistanceMap[pieceToCheck.Left] - 
+                                     (Vector2)pieceToCheck.Left.Transform.localPosition;
+
+                    var group = PieceGroupHelper.PieceGroup(pieceToCheck.Left);
+
+                    if (!group.Contains(pieceToCheck) && !connectedGroups.Contains(group))
+                    {
+                        foreach (var piece in group)
+                        {
+                            seq.Join(piece.Transform.DOLocalMove(leftDistance, PieceMoveDuration).SetRelative());
+                        }
+                        
+                        connectedGroups.Add(group);
+                    }
+                }
+
+                if (pieceToCheck.Down != null && pieceToCheck.CanConnect(pieceToCheck.Down))
+                {
+                    var downDistance = (Vector2)pieceToCheck.Transform.localPosition +
+                                     pieceToCheck.LinkDistanceMap[pieceToCheck.Down] - 
+                                     (Vector2)pieceToCheck.Down.Transform.localPosition;
+
+                    var group = PieceGroupHelper.PieceGroup(pieceToCheck.Down);
+
+                    if (!group.Contains(pieceToCheck) && !connectedGroups.Contains(group))
+                    {
+                        foreach (var piece in group)
+                        {
+                            seq.Join(piece.Transform.DOLocalMove(downDistance, PieceMoveDuration).SetRelative());
+                        }
+                        
+                        connectedGroups.Add(group);
+                    }
+                }
+
+                if (pieceToCheck.Right != null && pieceToCheck.CanConnect(pieceToCheck.Right))
+                {
+                    var rightDistance = (Vector2)pieceToCheck.Transform.localPosition +
+                                       pieceToCheck.LinkDistanceMap[pieceToCheck.Right] - 
+                                       (Vector2)pieceToCheck.Right.Transform.localPosition;
+
+                    var group = PieceGroupHelper.PieceGroup(pieceToCheck.Right);
+                    
+                    if (!group.Contains(pieceToCheck) && !connectedGroups.Contains(group))
+                    {
+                        foreach (var piece in group)
+                        {
+                            seq.Join(piece.Transform.DOLocalMove(rightDistance, PieceMoveDuration).SetRelative());
+                        }
+                        
+                        connectedGroups.Add(group);
+                    }
+                }
             }
 
+            foreach (var group in connectedGroups.Where(group => group.Length > 0))
+            {
+                PieceGroupHelper.ConnectGroup(checkPiece, group[0]);
+            }
+            
             seq.Play().OnComplete(() =>
             {
-                foreach (var linkPiece in connectList.Where(linkPiece => !pieceToCheck.ConnectedPieces.Contains(linkPiece)))
+                if (PieceGroupHelper.PiecesInGroupCount == pieces.Length && PieceGroupHelper.GroupCount == 1)
                 {
-                    pieceToCheck.ConnectedPieces.Add(linkPiece);
-                    linkPiece.ConnectedPieces.Add(pieceToCheck);
-                    PieceGroupHelper.ConnectGroup(pieceToCheck, linkPiece);
+                    foreach (var piece in pieces)
+                    {
+                        piece.Disable();
+                    }
+
+                    DoComplete().Play().OnComplete(() => OnComplete?.Invoke());
                 }
                 
                 BlockUI.Instance.Unblock();
             });
+        }
+
+        private Tween DoComplete()
+        {
+            var seq = DOTween.Sequence(transform);
+            
+            var distance = firstPieceTargetPosition - pieces[0].Transform.localPosition;
+            foreach (var piece in pieces)
+            {
+                seq.Join(piece.Transform.DOLocalMove(distance, 1f).SetRelative());
+            }
+
+            return seq;
         }
 
         #region Puzzle builder

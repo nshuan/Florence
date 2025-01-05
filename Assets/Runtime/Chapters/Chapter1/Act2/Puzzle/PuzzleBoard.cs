@@ -40,6 +40,15 @@ namespace Runtime.Chapters.Act2.Puzzle
 
         private void ShuffleBoard()
         {
+            for (var i = initializePlaceholder.Length - 1; i > 0; i--)
+            {
+                // Get a random index
+                var randomIndex = UnityEngine.Random.Range(0, i + 1);
+
+                // Swap elements
+                (initializePlaceholder[i], initializePlaceholder[randomIndex]) = (initializePlaceholder[randomIndex], initializePlaceholder[i]);
+            }
+            
             for (var i = 0; i < pieces.Length; i++)
             {
                 pieces[i].Transform.localPosition = initializePlaceholder[i].localPosition;

@@ -1,5 +1,6 @@
 using System;
 using DG.Tweening;
+using Runtime.Audio;
 using Runtime.Core;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -13,6 +14,7 @@ namespace Runtime.Chapters.Act2.Stamp
         private static Vector3 inkOffset = new Vector3(72, -38);
         
         [SerializeField] private PaperStack paperStack;
+        [SerializeField] private AudioPlay sfx;
         
         private bool IsHolding { get; set; }
         private Vector3 _mouseAnchor;
@@ -47,6 +49,7 @@ namespace Runtime.Chapters.Act2.Stamp
             BlockUI.Instance.Block();
             if (paperStack.IsStampable(transform.localPosition + inkOffset))
             {
+                sfx.Play(0.8f);
                 DoStampAndReturn().OnComplete(BlockUI.Instance.Unblock);
             }
             else

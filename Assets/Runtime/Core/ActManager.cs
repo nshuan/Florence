@@ -30,6 +30,29 @@ namespace Runtime.Core
             });
         }
 
+        public bool TryLoadAct(int chapter, int act, out Act actInstance)
+        {
+            var actPref = actLoader.Load(chapter, act);
+            if (actPref == null)
+            {
+                actInstance = null;
+                return false;
+            }
+            
+            actInstance = Instantiate(actPref, actParent);
+            actInstance.transform.position = Vector3.zero;
+
+            var lastAct = currentAct;
+            currentAct = actInstance;
+            actInstance.DoShow().OnComplete(() =>
+            {
+                if (lastAct == null) return;
+                Destroy(lastAct.gameObject);
+            });
+
+            return true;
+        }
+
 #if UNITY_EDITOR
         [Space]
         [Header("-- Editor Only --")]

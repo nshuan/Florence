@@ -11828,6 +11828,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6590486160032502761}
     m_Modifications:
+    - target: {fileID: 4127337642299607037, guid: 0dc049719a4564d43a034fc16d4e3282, type: 3}
+      propertyPath: nextAct
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4127337642299607037, guid: 0dc049719a4564d43a034fc16d4e3282, type: 3}
+      propertyPath: nextChapter
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4550599566786646464, guid: 0dc049719a4564d43a034fc16d4e3282, type: 3}
       propertyPath: m_Name
       value: Complete Button

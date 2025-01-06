@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using DG.Tweening;
 using EasyButtons;
+using Runtime.Audio;
 using Runtime.Core;
 using Runtime.Effects;
 using Unity.Collections;
@@ -15,6 +16,7 @@ namespace Runtime.Chapters.Act2.Puzzle
         private const float PieceMoveDuration = 0.2f;
         
         [SerializeField] private Vector2 pieceSize;
+        [SerializeField] private AudioPlay connectAudio; 
 
         public Action OnComplete { get; set; }
         private Vector3 firstPieceTargetPosition;
@@ -149,6 +151,7 @@ namespace Runtime.Chapters.Act2.Puzzle
                 PieceGroupHelper.ConnectGroup(checkPiece, group[0]);
             }
             
+            connectAudio.Play(0.5f);
             seq.Play().OnComplete(() =>
             {
                 if (PieceGroupHelper.PiecesInGroupCount == pieces.Length && PieceGroupHelper.GroupCount == 1)

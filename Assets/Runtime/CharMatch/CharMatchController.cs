@@ -1,22 +1,27 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using DG.Tweening;
 using echo17.Signaler.Core;
+using Runtime.Effects;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace Runtime.CharMatch
 {
-    public class CharMatchController : MonoSubscriber<CharItemSignal>
+    public class CharMatchController : MonoSubscriber<CharItemSignal>, IProgress
     {
         [SubclassSelector, SerializeReference] private ICharMatchShuffleStrategy _shuffleStrategy;
         [SerializeField] private UICharItem charItemPref;
         [SerializeField] private GridLayoutGroup boardGrid;
         [SerializeField] private Vector2Int boardSize;
+        [SerializeField] private float appearNumberDelay = 0.5f;
+        [SerializeField] private AnimationCurve appearNumberCurve;
 
         private Dictionary<int, bool> _boardValueMatchMap;
         private IUICharItem currentSelectItem;
         private bool IsBoardComplete => _boardValueMatchMap.All((pair => pair.Value == true));
+
         protected override void Awake()
         {
             base.Awake();
@@ -32,6 +37,8 @@ namespace Runtime.CharMatch
             var flattenChar = _shuffleStrategy.GetShuffledChar(boardSize.y, boardSize.x);
             _boardValueMatchMap = new Dictionary<int, bool>();
 
+            var appearSeq = DOTween.Sequence();
+            
             foreach (var charItem in flattenChar)
             {
                 _boardValueMatchMap.TryAdd(charItem.Value, false);
@@ -39,13 +46,29 @@ namespace Runtime.CharMatch
                 var item = Instantiate(charItemPref, transform);
                 item.Set(charItem);
                 item.gameObject.SetActive(true);
+
+                appearSeq.AppendCallback(() => item.DoAppear().SetEase(appearNumberCurve))
+                    .AppendInterval(0.1f);
             }
+
+            appearSeq.SetDelay(appearNumberDelay).Play();
         }
         
         protected override bool OnSignal(CharItemSignal signal)
         {
             if (currentSelectItem == null)
             {
+                if (boardSize.x * boardSize.y % 2 == 1 && _boardValueMatchMap.Count((pair) => !pair.Value) == 1)
+                {
+                    _boardValueMatchMap[signal.SelectedItem.Item.Value] = true;
+                    MatchSuccess(signal.SelectedItem);
+#if UNITY_EDITOR
+                    if (IsBoardComplete) Debug.Log("Board is completed!");
+#endif
+                    OnComplete?.Invoke();               
+                    return true;
+                }
+                
                 currentSelectItem = signal.SelectedItem;
                 SelectItem(currentSelectItem);
                 return true;
@@ -71,7 +94,7 @@ namespace Runtime.CharMatch
             return true;
         }
 
-        private void MatchSuccess(IUICharItem item1, IUICharItem item2)
+        private void MatchSuccess(IUICharItem item1, IUICharItem item2 = null)
         {
             var seq = DOTween.Sequence();
 
@@ -79,13 +102,16 @@ namespace Runtime.CharMatch
                 {
                     // TODO Block UI
                 })
-                .Append(item1.DoMatch())
-                .Join(item2.DoMatch())
-                .OnComplete(() =>
-                {
-                    // TODO Unblock UI
-                })
-                .Play();
+                .Append(item1.DoMatch());
+                
+            if (item2 != null)
+                seq.Join(item2.DoMatch());
+                
+            seq.OnComplete(() =>
+            {
+                // TODO Unblock UI
+            })
+            .Play();
         }
 
         private void MatchFail(IUICharItem item1, IUICharItem item2)
@@ -136,5 +162,7 @@ namespace Runtime.CharMatch
                 })
                 .Play();
         }
+
+        public Action OnComplete { get; set; }
     }
 }

@@ -1,13 +1,14 @@
 using System;
 using DG.Tweening;
 using Runtime.Core;
+using Runtime.Effects;
 using UnityEditor;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
 namespace Runtime.Chapters.Act2.Stamp
 {
-    public class PaperStack : MonoBehaviour
+    public class PaperStack : MonoBehaviour, IProgress
     {
         [SerializeField] private Transform[] papers;
         [SerializeField] private Transform stampInk;
@@ -36,7 +37,7 @@ namespace Runtime.Chapters.Act2.Stamp
         
         private Tween DoInitPapers()
         {
-            var seq = DOTween.Sequence().AppendInterval(0.5f);
+            var seq = DOTween.Sequence().AppendInterval(1f);
             
             foreach (var paper in papers)
             {
@@ -69,6 +70,8 @@ namespace Runtime.Chapters.Act2.Stamp
         {
             if (currentTurn < 0) return DOTween.Sequence();
 
+            BlockUI.Instance.Block();
+            
             var seq = DOTween.Sequence();
             var duplicateCount = Fibonacci(papers.Length - currentTurn);
             currentTurn -= 1;
@@ -120,7 +123,11 @@ namespace Runtime.Chapters.Act2.Stamp
                     .AppendInterval(0.25f);
             }
 
-            return seq;
+            return seq.OnComplete(() =>
+            {
+                BlockUI.Instance.Unblock();
+                if (currentTurn < 0) OnComplete?.Invoke();
+            });
         }
 
         // Start at 1
@@ -132,5 +139,7 @@ namespace Runtime.Chapters.Act2.Stamp
             if (n % 2 == 0) return Fibonacci(n / 2) * (2 * Fibonacci(n / 2 + 1) - Fibonacci(n / 2));
             else return (int)Math.Pow(Fibonacci(n / 2 + 1), 2) + (int)Math.Pow(Fibonacci(n / 2), 2);
         }
+
+        public Action OnComplete { get; set; }
     }
 }

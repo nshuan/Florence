@@ -1,4 +1,5 @@
 using Core;
+using DG.Tweening;
 using EasyButtons;
 using Runtime.Chapters;
 using UnityEngine;
@@ -11,6 +12,7 @@ namespace Runtime.Core
         [SerializeField] private Transform actParent;
         
         private readonly IActLoader actLoader = new ScriptableObjectActLoader();
+        private Act currentAct;
         
         public void LoadAct(int chapter, int act)
         {
@@ -19,7 +21,13 @@ namespace Runtime.Core
             var actInstance = Instantiate(actPref, actParent);
             actInstance.transform.position = Vector3.zero;
 
-            actInstance.DoShow();
+            var lastAct = currentAct;
+            currentAct = actInstance;
+            actInstance.DoShow().OnComplete(() =>
+            {
+                if (lastAct == null) return;
+                Destroy(lastAct.gameObject);
+            });
         }
 
 #if UNITY_EDITOR

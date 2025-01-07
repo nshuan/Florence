@@ -24,7 +24,7 @@ namespace Runtime.Core
         protected void Init()
         {
             var chapter1 = new Chapter1();
-            var chapter2 = new Chapter2();
+            var chapter2 = new Chapter1();
             chapter1.NextChapter = chapter2;
             chapterEntity1.Chapter = chapter1;
             chapterEntity2.Chapter = chapter2;

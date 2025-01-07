@@ -11,8 +11,10 @@ namespace Runtime.Chapters.Act1
     {
         [SerializeField] private bool forceStopAtEnd = false;
         [SerializeField] private UnityEvent onStopAtEnd;
+        [SerializeField] protected bool retriggerOnStop = false;
         
         private ScrollRect scrollRect;
+        private bool isReachedEnd = false;
 
         private void Awake()
         {
@@ -33,7 +35,23 @@ namespace Runtime.Chapters.Act1
         {
             const float delta = 0.025f;
 
-            if (!forceStopAtEnd) return;
+            if (!retriggerOnStop && isReachedEnd) return;
+            
+            if (!forceStopAtEnd)
+            {
+                if (scrollRect.horizontal && normalized.x <= delta)
+                {
+                    isReachedEnd = true;
+                    onStopAtEnd?.Invoke();
+                }
+
+                if (scrollRect.vertical && normalized.y <= delta)
+                {
+                    isReachedEnd = true; 
+                    onStopAtEnd?.Invoke();
+                }
+                return;
+            }
             
             if (scrollRect.horizontal && normalized.x <= delta)
             {

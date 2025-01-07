@@ -143,13 +143,13 @@ MonoBehaviour:
       type: {class: EffectFadeIn, ns: Runtime.Chapters.Act1, asm: Assembly-CSharp}
       data:
         _canvasGroup: {fileID: 4080419381809927525}
-        duration: 1
+        duration: 1.5
         delay: 0
     - rid: 3656702034681528335
       type: {class: EffectFadeOut, ns: Runtime.Chapters.Act1, asm: Assembly-CSharp}
       data:
         _canvasGroup: {fileID: 8908917532700264107}
-        duration: 1
+        duration: 1.5
     - rid: 3656702034681528337
       type: {class: EffectChainNode, ns: Runtime.Effects, asm: Assembly-CSharp}
       data:
@@ -159,7 +159,7 @@ MonoBehaviour:
       type: {class: EffectFadeIn, ns: Runtime.Chapters.Act1, asm: Assembly-CSharp}
       data:
         _canvasGroup: {fileID: 3453410116592462418}
-        duration: 1
+        duration: 1.5
         delay: 1
 --- !u!1 &234300127135883141
 GameObject:
@@ -4256,14 +4256,14 @@ MonoBehaviour:
       data:
         target: {fileID: 4177103156391881874}
         fromTargetPos: {fileID: 8644544484465664633}
-        duration: 1
+        duration: 1.5
         delay: 0
     - rid: 3656702034681528342
       type: {class: EffectMoveOut, ns: Runtime.Effects, asm: Assembly-CSharp}
       data:
         target: {fileID: 9200346262047350031}
         targetPos: {fileID: 8644544483651687309}
-        duration: 1
+        duration: 1.5
         delay: 0
     - rid: 3656702058027810816
       type: {class: JoinNode, ns: Runtime.Effects, asm: Assembly-CSharp}
@@ -7305,14 +7305,14 @@ MonoBehaviour:
       data:
         target: {fileID: 8644544483855829230}
         targetPos: {fileID: 8644544483838803161}
-        duration: 1
+        duration: 1.5
         delay: 0
     - rid: 1833645831783710727
       type: {class: EffectMoveIn, ns: Runtime.Effects, asm: Assembly-CSharp}
       data:
         target: {fileID: 8644544484601005303}
         fromTargetPos: {fileID: 8644544483285194479}
-        duration: 1
+        duration: 1.5
         delay: 0
 --- !u!1 &8644544484312280445
 GameObject:
@@ -7486,12 +7486,12 @@ MonoBehaviour:
       type: {class: EffectFadeOut, ns: Runtime.Chapters.Act1, asm: Assembly-CSharp}
       data:
         _canvasGroup: {fileID: 7359241414845716976}
-        duration: 1
+        duration: 1.5
     - rid: 3656702034681528321
       type: {class: EffectFadeIn, ns: Runtime.Chapters.Act1, asm: Assembly-CSharp}
       data:
         _canvasGroup: {fileID: 8908917532700264107}
-        duration: 1
+        duration: 1.5
         delay: 0
     - rid: 3656702034681528322
       type: {class: JoinNode, ns: Runtime.Effects, asm: Assembly-CSharp}

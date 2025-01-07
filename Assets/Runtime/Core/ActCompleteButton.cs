@@ -20,10 +20,6 @@ namespace Runtime.Core
                 Loading.Instance.LoadScene("Home", loadedAction: null);
 
             }
-            else
-            {
-                ActManager.Instance.RestartMusic();
-            }
 
             // image.DOFade(0f, 0.5f).SetEase(Ease.Linear);
         }

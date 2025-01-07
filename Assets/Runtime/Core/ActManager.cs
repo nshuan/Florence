@@ -1,6 +1,7 @@
 using Core;
 using DG.Tweening;
 using EasyButtons;
+using Runtime.Audio;
 using Runtime.Chapters;
 using UnityEngine;
 
@@ -25,6 +26,7 @@ namespace Runtime.Core
             currentAct = actInstance;
             actInstance.DoShow().OnComplete(() =>
             {
+                RestartMusic();
                 if (lastAct == null) return;
                 Destroy(lastAct.gameObject);
             });
@@ -49,8 +51,10 @@ namespace Runtime.Core
 
             var lastAct = currentAct;
             currentAct = actInstance;
+            AudioManager.Instance.VolumeOffBgMusic();
             actInstance.DoShow().OnComplete(() =>
             {
+                RestartMusic();
                 if (lastAct == null) return;
                 Destroy(lastAct.gameObject);
             });

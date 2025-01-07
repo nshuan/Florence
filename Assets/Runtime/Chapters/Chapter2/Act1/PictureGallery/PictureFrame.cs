@@ -1,5 +1,6 @@
 using System;
 using DG.Tweening;
+using Runtime.Audio;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -9,6 +10,7 @@ namespace Runtime.Chapters.Chapter2.Act1.PictureGallery
     {
         [SerializeField] private bool isStraight = false;
         [SerializeField] private bool isClockwise = true;
+        [SerializeField] private AudioPlay sfx;
 
         public static event Action OnFixed;
         
@@ -18,6 +20,7 @@ namespace Runtime.Chapters.Chapter2.Act1.PictureGallery
         {
             if (IsStraight) return;
             isStraight = true;
+            sfx.Play(0.5f);
             DoFix().Play();
             OnFixed?.Invoke();
         }

@@ -32,6 +32,11 @@ public class ScratcherInterpolateInverse : MonoBehaviour, IPointerDownHandler, I
         targetImage.material = material;
     }
 
+    public void RemoveMaterial()
+    {
+        targetImage.material = null;
+    }
+
     public void SetImageColorAlpha(float alpha)
     {
         var c = targetImage.color;

@@ -11,6 +11,7 @@
     <type fullname="Runtime.Chapters.Act1.ActionEatArm" preserve="all" />
     <type fullname="Runtime.Chapters.Act1.ActionEatFood" preserve="all" />
     <type fullname="Runtime.Chapters.Act1.ActionEatProgress" preserve="all" />
+    <type fullname="Runtime.Chapters.Act1.ActionOpenBox" preserve="all" />
     <type fullname="Runtime.Chapters.Act1.ActionScratch" preserve="all" />
     <type fullname="Runtime.Chapters.Act1.ActionSleep" preserve="all" />
     <type fullname="Runtime.Chapters.Act1.ActionTimePassed" preserve="all" />
@@ -27,6 +28,9 @@
     <type fullname="Runtime.Chapters.Act2.Stamp.PaperStack" preserve="all" />
     <type fullname="Runtime.Chapters.Act2.Stamp.Stamp" preserve="all" />
     <type fullname="Runtime.Chapters.AutoScaleOnClick" preserve="all" />
+    <type fullname="Runtime.Chapters.Chapter2.Act1.PictureGallery.PictureFrame" preserve="all" />
+    <type fullname="Runtime.Chapters.Chapter2.Act1.PictureGallery.PictureGallery" preserve="all" />
+    <type fullname="Runtime.Chapters.Chapter2.ActionScratchInverse" preserve="all" />
     <type fullname="Runtime.CharMatch.CharMatchController" preserve="all" />
     <type fullname="Runtime.CharMatch.UICharItem" preserve="all" />
     <type fullname="Runtime.Clock.ClockHourHand" preserve="all" />
@@ -36,8 +40,10 @@
     <type fullname="Runtime.Effects.EffectButton" preserve="all" />
     <type fullname="Runtime.Effects.EffectChain" preserve="all" />
     <type fullname="Runtime.Effects.EffectOnProgressComplete" preserve="all" />
+    <type fullname="Runtime.Effects.EffectShakeRotationOnEnable" preserve="all" />
     <type fullname="Runtime.Home.BackToHomeButton" preserve="all" />
     <type fullname="ScratcherInterpolate" preserve="all" />
+    <type fullname="ScratcherInterpolateInverse" preserve="all" />
     <type fullname="Runtime.Audio.AudioPlay" preserve="nothing" serialized="true" />
     <type fullname="Runtime.Chapters.Act1.ActionTimePassing/ActionTimePassingStage" preserve="nothing" serialized="true" />
     <type fullname="Runtime.Chapters.Act1.AnimSpriteFrame" preserve="nothing" serialized="true" />
@@ -48,6 +54,7 @@
     <type fullname="Runtime.Chapters.Act1.EffectPullTrigger" preserve="nothing" serialized="true" />
     <type fullname="Runtime.Chapters.Act1.EffectTimer" preserve="nothing" serialized="true" />
     <type fullname="Runtime.Chapters.Act2.Sheet.CharMatchSheetStrategy" preserve="nothing" serialized="true" />
+    <type fullname="Runtime.Chapters.EffectCallback" preserve="nothing" serialized="true" />
     <type fullname="Runtime.Effects.EffectChainNode" preserve="nothing" serialized="true" />
     <type fullname="Runtime.Effects.EffectMoveIn" preserve="nothing" serialized="true" />
     <type fullname="Runtime.Effects.EffectMoveOut" preserve="nothing" serialized="true" />

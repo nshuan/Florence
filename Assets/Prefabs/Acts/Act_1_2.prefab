@@ -7364,30 +7364,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _effectNodes:
-  - rid: 1833645831783710728
-  - rid: 3607306429056942080
-  - rid: 3607306371853713408
+  - rid: 3656702058027810852
   references:
     version: 2
     RefIds:
-    - rid: 1833645831783710728
+    - rid: 3656702058027810852
+      type: {class: SequenceNode, ns: Runtime.Effects, asm: Assembly-CSharp}
+      data:
+        delay: 0
+        nodes:
+        - rid: 3656702058027810853
+        - rid: 3656702058027810854
+        - rid: 3656702058027810855
+    - rid: 3656702058027810853
       type: {class: EffectFadeIn, ns: Runtime.Chapters.Act1, asm: Assembly-CSharp}
       data:
         _canvasGroup: {fileID: 7518347248345800890}
-        duration: 2
-        delay: 1
-    - rid: 3607306371853713408
-      type: {class: EffectFadeInImage, ns: Runtime.Chapters.Act1, asm: Assembly-CSharp}
-      data:
-        image: {fileID: 6289581197714934815}
-        duration: 0.5
-        delay: 1
-    - rid: 3607306429056942080
+        duration: 3
+        delay: 0.5
+    - rid: 3656702058027810854
       type: {class: EffectFadeInImage, ns: Runtime.Chapters.Act1, asm: Assembly-CSharp}
       data:
         image: {fileID: 9066860554249239266}
         duration: 1.5
         delay: 0.5
+    - rid: 3656702058027810855
+      type: {class: EffectFadeInImage, ns: Runtime.Chapters.Act1, asm: Assembly-CSharp}
+      data:
+        image: {fileID: 6289581197714934815}
+        duration: 0.5
+        delay: 1
 --- !u!1 &8644544484465664632
 GameObject:
   m_ObjectHideFlags: 0

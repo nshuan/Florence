@@ -1,4 +1,5 @@
 using System;
+using Core;
 using DG.Tweening;
 using Runtime.Audio;
 using UnityEngine;
@@ -29,16 +30,16 @@ namespace Runtime.Chapters.Act1
         {
             transform.DOKill();
             IsHolding = true;
-            _mouseAnchor = UnityEngine.Input.mousePosition;
-            _targetAnchor = transform.localPosition;
+            _mouseAnchor = CameraUtility.ScreenToWorldPoint(eventData.position);
         }
 
         public void OnPointerMove(PointerEventData eventData)
         {
             if (IsHolding)
             {
-                var distance = UnityEngine.Input.mousePosition - _mouseAnchor;
-                transform.localPosition = _targetAnchor + distance;
+                var distance = CameraUtility.ScreenToWorldPoint(eventData.position) - (Vector3)_mouseAnchor;
+                _mouseAnchor = CameraUtility.ScreenToWorldPoint(eventData.position);
+                transform.position += distance;
                 OnMove?.Invoke();
             }
         }

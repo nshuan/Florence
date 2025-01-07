@@ -1,4 +1,5 @@
 using System;
+using Core;
 using DG.Tweening;
 using Runtime.Audio;
 using Runtime.Core;
@@ -18,7 +19,6 @@ namespace Runtime.Chapters.Act2.Stamp
         
         private bool IsHolding { get; set; }
         private Vector3 _mouseAnchor;
-        private Vector3 _targetAnchor;
         private Vector3 initialPos;
 
         private void Awake()
@@ -30,16 +30,17 @@ namespace Runtime.Chapters.Act2.Stamp
         {
             transform.DOKill();
             IsHolding = true;
-            _mouseAnchor = UnityEngine.Input.mousePosition;
-            _targetAnchor = transform.localPosition;
+            _mouseAnchor = CameraUtility.ScreenToWorldPoint(eventData.position);
         }
         
         public void OnPointerMove(PointerEventData eventData)
         {
             if (IsHolding)
             {
-                var distance = UnityEngine.Input.mousePosition - _mouseAnchor;
-                transform.localPosition = _targetAnchor + distance;
+                var distance = CameraUtility.ScreenToWorldPoint(eventData.position) - (Vector3)_mouseAnchor;
+                _mouseAnchor = CameraUtility.ScreenToWorldPoint(eventData.position);
+
+                transform.position += distance;
             }
         }
         

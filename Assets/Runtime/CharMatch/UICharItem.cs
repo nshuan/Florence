@@ -55,12 +55,14 @@ namespace Runtime.CharMatch
             Clickable = false;
             return DOTween.Sequence(transform)
                 .Append(image.DOColor(matchColor, 0.1f))
+                .Join(charText.transform.DOScale(1.2f, 0.2f))
                 .Join(DOTween.To(() => Item.Value, x =>
                 {
                     Item.Value = x;
                     charText.text = Item.ToText();
                 }, 0, 0.5f))
-                .Append(image.DOColor(normalColor, 0.2f));
+                .Append(image.DOColor(normalColor, 0.2f))
+                .Join(charText.transform.DOScale(1f, 0.2f));
         }
 
         public Tween DoUnMatch()

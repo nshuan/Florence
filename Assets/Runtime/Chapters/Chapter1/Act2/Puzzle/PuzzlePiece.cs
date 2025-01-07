@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Core;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -61,20 +62,28 @@ namespace Runtime.Chapters.Act2.Puzzle
             transform.DOKill();
             isHolding = true;
             transform.SetAsLastSibling();
-            _mouseAnchor = UnityEngine.Input.mousePosition;
+            _mouseAnchor = CameraUtility.ScreenToWorldPoint(eventData.position);
         }
 
         public void OnPointerMove(PointerEventData eventData)
         {
             if (isHolding)
             {
-                var distance = (Vector2)UnityEngine.Input.mousePosition - _mouseAnchor;
-                _mouseAnchor = (Vector2)UnityEngine.Input.mousePosition;
-
+                // var distance = (Vector2)UnityEngine.Input.mousePosition - _mouseAnchor;
+                // _mouseAnchor = (Vector2)UnityEngine.Input.mousePosition;
+                //
+                // foreach (var piece in Board.PieceGroupHelper.PieceGroup(this))
+                // {
+                //     piece.Transform.SetAsLastSibling();
+                //     piece.Transform.localPosition = (Vector2)piece.Transform.localPosition + distance;
+                // }
+                
+                var distance = CameraUtility.ScreenToWorldPoint(eventData.position) - (Vector3)_mouseAnchor;
+                _mouseAnchor = CameraUtility.ScreenToWorldPoint(eventData.position);
                 foreach (var piece in Board.PieceGroupHelper.PieceGroup(this))
                 {
                     piece.Transform.SetAsLastSibling();
-                    piece.Transform.localPosition = (Vector2)piece.Transform.localPosition + distance;
+                    piece.Transform.position += distance;
                 }
             }
         }

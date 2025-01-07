@@ -27,6 +27,11 @@ public class ScratcherInterpolate : MonoBehaviour, IPointerDownHandler, IDragHan
         material.SetTexture("_AlphaMask", maskTexture);
     }
 
+    public void SetMaterial()
+    {
+        targetImage.material = material;
+    }
+    
     public void ProcessScratch(PointerEventData eventData)
     {
         Vector2 localPoint;
@@ -129,11 +134,13 @@ public class ScratcherInterpolate : MonoBehaviour, IPointerDownHandler, IDragHan
 
     public void OnPointerDown(PointerEventData eventData)
     {
+        if (targetImage.material != material) return;
         ProcessScratch(eventData);
     }
 
     public void OnDrag(PointerEventData eventData)
     {
+        if (targetImage.material != material) return;
         ProcessScratch(eventData);
     }
 

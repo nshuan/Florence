@@ -1,6 +1,7 @@
 using System;
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 namespace Runtime.Chapters.Act1
@@ -9,6 +10,7 @@ namespace Runtime.Chapters.Act1
     public class EffectScroll : MonoBehaviour
     {
         [SerializeField] private bool forceStopAtEnd = false;
+        [SerializeField] private UnityEvent onStopAtEnd;
         
         private ScrollRect scrollRect;
 
@@ -29,7 +31,7 @@ namespace Runtime.Chapters.Act1
 
         private void OnScroll(Vector2 normalized)
         {
-            const float delta = 0.01f;
+            const float delta = 0.025f;
 
             if (!forceStopAtEnd) return;
             
@@ -39,7 +41,10 @@ namespace Runtime.Chapters.Act1
                 DOTween.To(() => scrollRect.horizontalNormalizedPosition, x =>
                 {
                     scrollRect.horizontalNormalizedPosition = x;
-                }, 0, 0.2f);
+                }, 0, 0.2f).OnComplete(() =>
+                {
+                    onStopAtEnd?.Invoke();
+                });
                 
                 return;
             }
@@ -50,7 +55,11 @@ namespace Runtime.Chapters.Act1
                 DOTween.To(() => scrollRect.verticalNormalizedPosition, x =>
                 {
                     scrollRect.verticalNormalizedPosition = x;
-                }, 0, 0.2f);
+                }, 0, 0.2f).OnComplete(() =>
+                {
+                    onStopAtEnd?.Invoke();
+                });
+                
                 return;
             }
         }

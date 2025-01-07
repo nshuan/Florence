@@ -35,6 +35,7 @@ namespace Runtime.Audio
         public void SetBgMusicAndOn(AudioClip music, float volume = 0.1f)
         {
             DOTween.Sequence()
+                .Append(DOTween.To(x => bgMusic.volume = x, bgMusic.volume, 0, 0.5f))
                 .AppendCallback(() => bgMusic.clip = music)
                 .Append(DOTween.To(x => bgMusic.volume = x, 0, volume, 0.5f))
                 .AppendCallback(() => bgMusic.Play())

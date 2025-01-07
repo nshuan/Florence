@@ -21,6 +21,7 @@
     <type fullname="Runtime.Chapters.Act1.BrushingProgressBar" preserve="all" />
     <type fullname="Runtime.Chapters.Act1.EffectScroll" preserve="all" />
     <type fullname="Runtime.Chapters.Act1.WritingArm" preserve="all" />
+    <type fullname="Runtime.Chapters.Act2.Alarm.StopAlarmOnClick" preserve="all" />
     <type fullname="Runtime.Chapters.Act2.Puzzle.PuzzleBoard" preserve="all" />
     <type fullname="Runtime.Chapters.Act2.Puzzle.PuzzlePiece" preserve="all" />
     <type fullname="Runtime.Chapters.Act2.Stamp.PaperStack" preserve="all" />

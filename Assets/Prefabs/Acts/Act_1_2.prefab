@@ -589,6 +589,26 @@ MonoBehaviour:
         nodes:
         - rid: 3607306486508158986
         - rid: 3607306486508158985
+        - rid: 3656702058027810819
+    - rid: 3656702058027810819
+      type: {class: JoinNode, ns: Runtime.Effects, asm: Assembly-CSharp}
+      data:
+        delay: 0.5
+        subNodes:
+        - rid: 3656702058027810820
+        - rid: 3656702058027810821
+    - rid: 3656702058027810820
+      type: {class: EffectFadeInImage, ns: Runtime.Chapters.Act1, asm: Assembly-CSharp}
+      data:
+        image: {fileID: 771486933747690498}
+        duration: 0.5
+        delay: 0
+    - rid: 3656702058027810821
+      type: {class: EffectFadeInImage, ns: Runtime.Chapters.Act1, asm: Assembly-CSharp}
+      data:
+        image: {fileID: 3398139712424284680}
+        duration: 0.5
+        delay: 0
 --- !u!1 &1124002566489912723
 GameObject:
   m_ObjectHideFlags: 0
@@ -4223,6 +4243,7 @@ MonoBehaviour:
         delay: 2
         nodes:
         - rid: 3656702034681528340
+        - rid: 3656702058027810816
     - rid: 3656702034681528340
       type: {class: JoinNode, ns: Runtime.Effects, asm: Assembly-CSharp}
       data:
@@ -4243,6 +4264,25 @@ MonoBehaviour:
         target: {fileID: 9200346262047350031}
         targetPos: {fileID: 8644544483651687309}
         duration: 1
+        delay: 0
+    - rid: 3656702058027810816
+      type: {class: JoinNode, ns: Runtime.Effects, asm: Assembly-CSharp}
+      data:
+        delay: 0
+        subNodes:
+        - rid: 3656702058027810817
+        - rid: 3656702058027810818
+    - rid: 3656702058027810817
+      type: {class: EffectFadeInImage, ns: Runtime.Chapters.Act1, asm: Assembly-CSharp}
+      data:
+        image: {fileID: 8285151826474345872}
+        duration: 0.5
+        delay: 0
+    - rid: 3656702058027810818
+      type: {class: EffectFadeInImage, ns: Runtime.Chapters.Act1, asm: Assembly-CSharp}
+      data:
+        image: {fileID: 1673605393760626606}
+        duration: 0.5
         delay: 0
 --- !u!1 &6051509700117189410
 GameObject:
@@ -6480,7 +6520,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8448247025350440983}
   m_Enabled: 1
-  m_Alpha: 1
+  m_Alpha: 0
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
@@ -7334,8 +7374,8 @@ MonoBehaviour:
       type: {class: EffectFadeIn, ns: Runtime.Chapters.Act1, asm: Assembly-CSharp}
       data:
         _canvasGroup: {fileID: 7518347248345800890}
-        duration: 1
-        delay: 0
+        duration: 2
+        delay: 1
     - rid: 3607306371853713408
       type: {class: EffectFadeInImage, ns: Runtime.Chapters.Act1, asm: Assembly-CSharp}
       data:
@@ -7346,8 +7386,8 @@ MonoBehaviour:
       type: {class: EffectFadeInImage, ns: Runtime.Chapters.Act1, asm: Assembly-CSharp}
       data:
         image: {fileID: 9066860554249239266}
-        duration: 1
-        delay: 0
+        duration: 1.5
+        delay: 0.5
 --- !u!1 &8644544484465664632
 GameObject:
   m_ObjectHideFlags: 0
@@ -7781,7 +7821,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioPlay:
     audioClip: {fileID: 8300000, guid: 0451bb1dcaad6724287e2283165a7327, type: 3}
-  volumeScale: 1
+  volumeScale: 0.6
   loop: 1
 --- !u!1 &8959681981268758325
 GameObject:
@@ -8254,6 +8294,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1538144221003421849, guid: 2d7f3cc76934da64982307e2630bba92, type: 3}
   m_PrefabInstance: {fileID: 2261212506367575268}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8285151826474345872 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7898105914842636660, guid: 2d7f3cc76934da64982307e2630bba92, type: 3}
+  m_PrefabInstance: {fileID: 2261212506367575268}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3360651102993685687
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8808,6 +8859,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d8f6b03de45613429815416b683fe7a, type: 3}
+--- !u!114 &3398139712424284680 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8757138724748936352, guid: 5d8f6b03de45613429815416b683fe7a, type: 3}
+  m_PrefabInstance: {fileID: 6246217073522431656}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &4354624883005044123 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7692633150196769587, guid: 5d8f6b03de45613429815416b683fe7a, type: 3}
@@ -8914,6 +8976,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d7f3cc76934da64982307e2630bba92, type: 3}
+--- !u!114 &771486933747690498 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7898105914842636660, guid: 2d7f3cc76934da64982307e2630bba92, type: 3}
+  m_PrefabInstance: {fileID: 7435278318267108726}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &8248338566783112687 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1538144221003421849, guid: 2d7f3cc76934da64982307e2630bba92, type: 3}
@@ -9131,3 +9204,14 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7692633150196769587, guid: 5d8f6b03de45613429815416b683fe7a, type: 3}
   m_PrefabInstance: {fileID: 7979899671587709710}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1673605393760626606 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8757138724748936352, guid: 5d8f6b03de45613429815416b683fe7a, type: 3}
+  m_PrefabInstance: {fileID: 7979899671587709710}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

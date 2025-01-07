@@ -30,6 +30,11 @@ namespace Runtime.Core
             });
         }
 
+        public void RestartMusic()
+        {
+            currentAct.PlayMusic();
+        }
+
         public bool TryLoadAct(int chapter, int act, out Act actInstance)
         {
             var actPref = actLoader.Load(chapter, act);
@@ -61,10 +66,12 @@ namespace Runtime.Core
         private void LoadAct(Act prefab)
         {
             prefab ??= actToLoad;
-            var actInstance = Instantiate(prefab, actParent);
-            actInstance.transform.position = Vector3.zero;
+            currentAct = Instantiate(prefab, actParent);
+            currentAct.transform.position = Vector3.zero;
 
-            actInstance.DoShow();
+            currentAct.DoShow();
+            
+            RestartMusic();
         }
 #endif
     }

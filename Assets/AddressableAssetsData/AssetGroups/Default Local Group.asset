@@ -17,6 +17,11 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: 60aae617838a3144d9e439124be29142
   m_SerializeEntries:
+  - m_GUID: 9ab59913d5e91b64b9b5ca56bd92ee06
+    m_Address: Assets/Prefabs/UISettings.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: cfee1a83e6fb6f84f9539c5fe64a7077
     m_Address: Assets/Prefabs/Acts
     m_ReadOnly: 0

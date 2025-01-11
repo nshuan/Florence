@@ -24,6 +24,7 @@ namespace Runtime.Core
 
             var lastAct = currentAct;
             currentAct = actInstance;
+            AudioManager.Instance.VolumeOffBgMusic();
             actInstance.DoShow().OnComplete(() =>
             {
                 RestartMusic();

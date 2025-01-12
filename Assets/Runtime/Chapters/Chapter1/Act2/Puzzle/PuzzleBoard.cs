@@ -152,6 +152,7 @@ namespace Runtime.Chapters.Act2.Puzzle
             }
             
             connectAudio.Play(0.5f);
+            
             seq.Play().OnComplete(() =>
             {
                 if (PieceGroupHelper.PiecesInGroupCount == pieces.Length && PieceGroupHelper.GroupCount == 1)

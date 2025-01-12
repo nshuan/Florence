@@ -5704,10 +5704,10 @@ RectTransform:
   m_Father: {fileID: 8644544483126964792}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 1744, y: 828}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &8096903786300096121
 MonoBehaviour:
@@ -5721,7 +5721,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c30dd609ae14041b116037f2789d37f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pieceSize: {x: 0, y: 0}
+  pieceSize: {x: 250, y: 250}
   connectAudio:
     audioClip: {fileID: 8300000, guid: 056be68a6f3026645af0325f1a7750bc, type: 3}
   initializePlaceholder:

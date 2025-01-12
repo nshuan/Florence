@@ -3781,6 +3781,12 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
+    - rid: 3607306610101977088
+      type: {class: EffectFadeOutImage, ns: Runtime.Chapters.Act1, asm: Assembly-CSharp}
+      data:
+        image: {fileID: 4176058192285024227}
+        duration: 1.5
+        delay: 0
     - rid: 3656701967168438287
       type: {class: EffectFadeOut, ns: Runtime.Chapters.Act1, asm: Assembly-CSharp}
       data:
@@ -3832,6 +3838,7 @@ MonoBehaviour:
         subNodes:
         - rid: 3656701967168438287
         - rid: 3656701967168438289
+        - rid: 3607306610101977088
         - rid: 3656701967168438290
 --- !u!1 &6772738199421425877
 GameObject:
@@ -7646,6 +7653,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  retriggerOnStop: 0
 --- !u!1 &8644544483567965709
 GameObject:
   m_ObjectHideFlags: 0
@@ -10428,6 +10436,12 @@ MonoBehaviour:
         image: {fileID: 8644544483616971062}
         duration: 1
         delay: 0
+    - rid: 3607306600083095553
+      type: {class: EffectFadeOutImage, ns: Runtime.Chapters.Act1, asm: Assembly-CSharp}
+      data:
+        image: {fileID: 8644544483753654849}
+        duration: 1
+        delay: 0
     - rid: 3855360694210002945
       type: {class: SequenceNode, ns: Runtime.Effects, asm: Assembly-CSharp}
       data:
@@ -10441,6 +10455,7 @@ MonoBehaviour:
         subNodes:
         - rid: 3855360694210002947
         - rid: 3855360694210002948
+        - rid: 3607306600083095553
     - rid: 3855360694210002947
       type: {class: EffectFadeOut, ns: Runtime.Chapters.Act1, asm: Assembly-CSharp}
       data:

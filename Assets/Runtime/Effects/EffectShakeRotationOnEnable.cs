@@ -35,6 +35,7 @@ namespace Runtime.Effects
         public void Stop()
         {
             transform.DOKill();
+            transform.DORotate(Vector3.zero, 0.2f);
             this.enabled = false;
         }
 

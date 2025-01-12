@@ -19,3 +19,4 @@ MonoBehaviour:
   - acts:
     - {fileID: 2283076345288660475, guid: 58aba38ef89f3234383481c0bb49b820, type: 3}
     - {fileID: 2283076345288660475, guid: df4a18ff5ae109d49b8c91eabcaee64b, type: 3}
+    - {fileID: 2283076345288660475, guid: 25502a3bf008ac7499d947dfdafebbc5, type: 3}

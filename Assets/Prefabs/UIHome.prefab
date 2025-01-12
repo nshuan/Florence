@@ -166,6 +166,7 @@ GameObject:
   - component: {fileID: 5734026703288117178}
   - component: {fileID: 5734026703288117179}
   - component: {fileID: 5734026703288117156}
+  - component: {fileID: 1982723070891165719}
   m_Layer: 5
   m_Name: Chapter 2 Act 2
   m_TagString: Untagged
@@ -261,6 +262,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioClip: {fileID: 8300000, guid: cbc063655059b1349b0460e47e965a13, type: 3}
   volume: 0.5
+--- !u!114 &1982723070891165719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5734026703288117177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 828f4a0b65ab4e3eb8772dca2a442102, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chapter: 2
+  act: 2
 --- !u!1 &5734026703292328348
 GameObject:
   m_ObjectHideFlags: 0

@@ -14,13 +14,13 @@ namespace Runtime.Effects
         
         public Tween GetTween()
         {
-            return DOTween.Sequence().SetDelay(delay).SetEase(Ease.Linear)
+            return DOTween.Sequence().SetDelay(delay).SetEase(Ease.InOutSine)
                 .AppendCallback(() =>
                 {
                     target.position = fromTargetPos.position;
                     target.gameObject.SetActive(true);
                 })
-                .Append(target.DOLocalMove(Vector3.zero, duration).SetEase(Ease.Linear));
+                .Append(target.DOLocalMove(Vector3.zero, duration).SetEase(Ease.InOutSine));
         }
     }
 }

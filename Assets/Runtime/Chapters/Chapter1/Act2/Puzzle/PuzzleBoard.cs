@@ -16,7 +16,8 @@ namespace Runtime.Chapters.Act2.Puzzle
         private const float PieceMoveDuration = 0.2f;
         
         [SerializeField] private Vector2 pieceSize;
-        [SerializeField] private AudioPlay connectAudio; 
+        [SerializeField] private AudioPlay connectAudio;
+        [SerializeField] private bool moveToPositionOnComplete = true;
 
         public Action OnComplete { get; set; }
         private Vector3 firstPieceTargetPosition;
@@ -157,19 +158,23 @@ namespace Runtime.Chapters.Act2.Puzzle
             {
                 if (PieceGroupHelper.PiecesInGroupCount == pieces.Length && PieceGroupHelper.GroupCount == 1)
                 {
-                    foreach (var piece in pieces)
+                    if (moveToPositionOnComplete)
                     {
-                        piece.Disable();
+                        foreach (var piece in pieces)
+                        {
+                            piece.Disable();
+                        }
+                        DoComplete(1f).Play().OnComplete(() => OnComplete?.Invoke());
                     }
-
-                    DoComplete().Play().OnComplete(() => OnComplete?.Invoke());
+                    else
+                        OnComplete?.Invoke();
                 }
                 
                 BlockUI.Instance.Unblock();
             });
         }
 
-        private Tween DoComplete()
+        public Tween DoComplete(float duration)
         {
             var seq = DOTween.Sequence(transform);
             

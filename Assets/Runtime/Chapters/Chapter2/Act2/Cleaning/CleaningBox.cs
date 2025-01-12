@@ -1,10 +1,11 @@
 using System;
 using DG.Tweening;
+using Runtime.Effects;
 using UnityEngine;
 
 namespace Runtime.Chapters.Act2.Cleaning
 {
-    public class CleaningBox : MonoBehaviour
+    public class CleaningBox : MonoBehaviour, IProgress
     {
         private CleaningItem[] items;
         private Vector2 boxSize;
@@ -28,6 +29,9 @@ namespace Runtime.Chapters.Act2.Cleaning
         {
             completeItemCount += 1;
             DoClampItem(item);
+            
+            if (completeItemCount == items.Length)
+                OnComplete.Invoke();
         }
 
         private Tween DoClampItem(CleaningItem item)
@@ -39,5 +43,7 @@ namespace Runtime.Chapters.Act2.Cleaning
             
             return seq;
         }
+
+        public Action OnComplete { get; set; }
     }
 }

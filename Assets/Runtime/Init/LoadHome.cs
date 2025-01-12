@@ -1,13 +1,19 @@
 using System;
+using System.Collections;
+using DG.Tweening;
+using Runtime.Effects;
 using UnityEngine;
 
 namespace Runtime.Init
 {
     public class LoadHome : MonoBehaviour
     {
-        private void Start()
+        [SerializeField] private EffectChain introEffect;
+        
+        private IEnumerator Start()
         {
-            Loading.Instance.LoadScene("Home", 0.5f, loadedEnumerator: null);
+            yield return introEffect.PlayEffect().WaitForCompletion();
+            Loading.Instance.LoadScene("Home", 1f, loadedEnumerator: null);
         }
     }
 }

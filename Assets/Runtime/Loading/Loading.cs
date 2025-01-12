@@ -66,7 +66,7 @@ namespace Runtime
             transform.DOKill();
             
             return DOTween.Sequence()
-                .Append(visual.DOFade(0f, 0.3f))
+                .Append(visual.DOFade(0f, duration))
                 .AppendCallback(() => visual.gameObject.SetActive(false));
         }
     }

@@ -18,7 +18,7 @@ namespace Runtime.Chapters.Act1
                 
             return DOTween.Sequence().SetDelay(delay)
                 .AppendCallback(() => _canvasGroup.gameObject.SetActive(true))
-                .Append(_canvasGroup.DOFade(1f, duration));
+                .Append(_canvasGroup.DOFade(1f, duration).SetEase(Ease.InSine));
         }
     }
 }

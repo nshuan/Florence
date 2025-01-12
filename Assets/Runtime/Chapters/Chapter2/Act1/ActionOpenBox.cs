@@ -45,7 +45,7 @@ namespace Runtime.Chapters.Act1
                 .Append(openImage.transform.DOScale(1f, 3f))
                 .Join(DOTween.Sequence()
                     .AppendInterval(1f)
-                    .Append(openColorImage.DOFade(1f, 2f)));
+                    .Append(openColorImage.DOFade(1f, 3f)));
             
             return seq.OnComplete(() =>
             {

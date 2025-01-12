@@ -27,8 +27,8 @@ namespace Runtime.Audio
 
         public void VolumeOffBgMusic()
         {
-            DOTween.Sequence()
-                .Append(DOTween.To(x => bgMusic.volume = x, bgMusic.volume, 0, 0.5f))
+            DOTween.Sequence().SetTarget(transform)
+                .Append(DOTween.To(x => bgMusic.volume = x, bgMusic.volume, 0, 1f))
                 .Play();
         }
 

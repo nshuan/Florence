@@ -18,37 +18,37 @@ namespace Runtime
             visual.alpha = 0f;
         }
 
-        public void LoadScene(string sceneName, IEnumerator loadedEnumerator = null)
+        public void LoadScene(string sceneName, float hideDuration, IEnumerator loadedEnumerator = null)
         {
             DOTween.KillAll();
             DoShow().OnComplete(() =>
             {
-                StartCoroutine(IELoadScene(sceneName, loadedEnumerator));
+                StartCoroutine(IELoadScene(sceneName, loadedEnumerator, hideDuration));
             });
         }
 
-        private IEnumerator IELoadScene(string sceneName, IEnumerator loadedEnumerator)
+        private IEnumerator IELoadScene(string sceneName, IEnumerator loadedEnumerator, float duration)
         {
             yield return SceneManager.LoadSceneAsync(sceneName);
             if (loadedEnumerator != null)
                 yield return loadedEnumerator;
-            yield return DoHide();
+            yield return DoHide(duration);
         }
 
-        public void LoadScene(string sceneName, Action loadedAction = null)
+        public void LoadScene(string sceneName, float hideDuration, Action loadedAction = null)
         {
             DOTween.KillAll();
             DoShow().OnComplete(() =>
             {
-                StartCoroutine(IELoadScene(sceneName, loadedAction));
+                StartCoroutine(IELoadScene(sceneName, loadedAction, hideDuration));
             });
         }
         
-        private IEnumerator IELoadScene(string sceneName, Action loadedAction)
+        private IEnumerator IELoadScene(string sceneName, Action loadedAction, float hideDuration)
         {
             yield return SceneManager.LoadSceneAsync(sceneName);
             loadedAction?.Invoke();
-            yield return DoHide();
+            yield return DoHide(hideDuration);
         }
         
         public Tween DoShow()
@@ -61,7 +61,7 @@ namespace Runtime
                 .AppendInterval(0.2f);
         }
 
-        public Tween DoHide()
+        public Tween DoHide(float duration)
         {
             transform.DOKill();
             

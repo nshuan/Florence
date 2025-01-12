@@ -14,10 +14,11 @@ namespace Runtime.Core
         
         public void OnPointerClick(PointerEventData eventData)
         {
+            DOTween.KillAll();
             if (!ActManager.Instance.TryLoadAct(nextChapter, nextAct, out var act))
             {
                 AudioManager.Instance.VolumeOffBgMusic();
-                Loading.Instance.LoadScene("Home", loadedAction: null);
+                Loading.Instance.LoadScene("Home", 1f, loadedAction: null);
 
             }
 

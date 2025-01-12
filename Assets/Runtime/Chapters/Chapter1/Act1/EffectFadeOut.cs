@@ -14,7 +14,7 @@ namespace Runtime.Chapters.Act1
         public Tween GetTween()
         {
             return DOTween.Sequence()
-                .Append(_canvasGroup.DOFade(0f, duration))
+                .Append(_canvasGroup.DOFade(0f, duration).SetEase(Ease.InSine))
                 .AppendCallback(() => _canvasGroup.gameObject.SetActive(false));
         }
     }

@@ -59,7 +59,7 @@ MonoBehaviour:
       data:
         image: {fileID: 5554548890270661439}
         duration: 1
-        delay: 1
+        delay: 0
     - rid: 3607306371853713413
       type: {class: EffectFadeInImage, ns: Runtime.Chapters.Act1, asm: Assembly-CSharp}
       data:
@@ -76,12 +76,12 @@ MonoBehaviour:
       type: {class: EffectFadeOut, ns: Runtime.Chapters.Act1, asm: Assembly-CSharp}
       data:
         _canvasGroup: {fileID: 620771327960512987}
-        duration: 1.5
+        duration: 3
     - rid: 3656701967168438285
       type: {class: EffectFadeIn, ns: Runtime.Chapters.Act1, asm: Assembly-CSharp}
       data:
         _canvasGroup: {fileID: 2128169776235693722}
-        duration: 1.5
+        duration: 3
         delay: 0
     - rid: 3855360676580032534
       type: {class: SequenceNode, ns: Runtime.Effects, asm: Assembly-CSharp}
@@ -1707,7 +1707,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &5231249754639154514
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3372,7 +3372,7 @@ MonoBehaviour:
       type: {class: EffectFadeIn, ns: Runtime.Chapters.Act1, asm: Assembly-CSharp}
       data:
         _canvasGroup: {fileID: 8974153569507068100}
-        duration: 1
+        duration: 2
         delay: 0
     - rid: 3855360676580032513
       type: {class: SequenceNode, ns: Runtime.Effects, asm: Assembly-CSharp}
@@ -3391,7 +3391,7 @@ MonoBehaviour:
     - rid: 3855360676580032516
       type: {class: JoinNode, ns: Runtime.Effects, asm: Assembly-CSharp}
       data:
-        delay: 1
+        delay: 2
         subNodes:
         - rid: 3855360676580032527
         - rid: 3855360785723162625
@@ -3781,29 +3781,17 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 3607306610101977088
-      type: {class: EffectFadeOutImage, ns: Runtime.Chapters.Act1, asm: Assembly-CSharp}
+    - rid: 3607306610101977108
+      type: {class: EffectFadeIn, ns: Runtime.Chapters.Act1, asm: Assembly-CSharp}
       data:
-        image: {fileID: 4176058192285024227}
-        duration: 1.5
+        _canvasGroup: {fileID: 1458150142957616016}
+        duration: 3
         delay: 0
     - rid: 3656701967168438287
       type: {class: EffectFadeOut, ns: Runtime.Chapters.Act1, asm: Assembly-CSharp}
       data:
         _canvasGroup: {fileID: 2128169776235693722}
-        duration: 1.5
-    - rid: 3656701967168438289
-      type: {class: EffectFadeInImage, ns: Runtime.Chapters.Act1, asm: Assembly-CSharp}
-      data:
-        image: {fileID: 1077971903451492893}
-        duration: 1.5
-        delay: 0
-    - rid: 3656701967168438290
-      type: {class: EffectFadeIn, ns: Runtime.Chapters.Act1, asm: Assembly-CSharp}
-      data:
-        _canvasGroup: {fileID: 4315013250177612854}
-        duration: 1
-        delay: 0.8
+        duration: 3
     - rid: 3656701967168438293
       type: {class: JoinNode, ns: Runtime.Effects, asm: Assembly-CSharp}
       data:
@@ -3837,9 +3825,7 @@ MonoBehaviour:
         delay: 0
         subNodes:
         - rid: 3656701967168438287
-        - rid: 3656701967168438289
-        - rid: 3607306610101977088
-        - rid: 3656701967168438290
+        - rid: 3607306610101977108
 --- !u!1 &6772738199421425877
 GameObject:
   m_ObjectHideFlags: 0
@@ -4296,21 +4282,21 @@ MonoBehaviour:
       data:
         target: {fileID: 8644544482730845325}
         targetPos: {fileID: 8644544483651687309}
-        duration: 1
+        duration: 3
         delay: 0
     - rid: 3607306395644592131
       type: {class: EffectMoveIn, ns: Runtime.Effects, asm: Assembly-CSharp}
       data:
         target: {fileID: 3631498003835066154}
         fromTargetPos: {fileID: 8644544484465664633}
-        duration: 1
+        duration: 3
         delay: 0
     - rid: 3607306395644592137
       type: {class: EffectFadeInImage, ns: Runtime.Chapters.Act1, asm: Assembly-CSharp}
       data:
         image: {fileID: 179694154738934564}
         duration: 0.5
-        delay: 1
+        delay: 3
 --- !u!225 &8451727124633034260
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -5154,7 +5140,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &5448930614912613874
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5224,7 +5210,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8413997179085324659}
   m_Enabled: 1
-  m_Alpha: 0
+  m_Alpha: 1
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
@@ -5528,13 +5514,14 @@ GameObject:
   m_Component:
   - component: {fileID: 967959708261678715}
   - component: {fileID: 8230690223072816077}
+  - component: {fileID: 1458150142957616016}
   m_Layer: 5
   m_Name: Scene8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &967959708261678715
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5566,6 +5553,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8582819050847614040}
   m_CullTransparentMesh: 1
+--- !u!225 &1458150142957616016
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8582819050847614040}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &8644544482705497666
 GameObject:
   m_ObjectHideFlags: 0
@@ -6370,13 +6369,13 @@ MonoBehaviour:
       type: {class: EffectFadeIn, ns: Runtime.Chapters.Act1, asm: Assembly-CSharp}
       data:
         _canvasGroup: {fileID: 620771327960512987}
-        duration: 1.5
+        duration: 3
         delay: 0
     - rid: 3656701967168438275
       type: {class: EffectFadeOut, ns: Runtime.Chapters.Act1, asm: Assembly-CSharp}
       data:
         _canvasGroup: {fileID: 8644544483365669263}
-        duration: 1.5
+        duration: 3
     - rid: 3656701967168438276
       type: {class: EffectFadeInImage, ns: Runtime.Chapters.Act1, asm: Assembly-CSharp}
       data:
@@ -6396,8 +6395,8 @@ MonoBehaviour:
         target: {fileID: 1876773554221866849}
         from: {x: 0.3, y: 0.3, z: 0.3}
         to: {x: 1, y: 1, z: 1}
-        ease: 27
-        duration: 0.5
+        ease: 30
+        duration: 1
         delay: 0
     - rid: 3656701967168438280
       type: {class: EffectScaleIn, ns: Runtime.Effects, asm: Assembly-CSharp}
@@ -6405,8 +6404,8 @@ MonoBehaviour:
         target: {fileID: 23265791718741626}
         from: {x: 0.3, y: 0.3, z: 0.3}
         to: {x: 1, y: 1, z: 1}
-        ease: 27
-        duration: 0.5
+        ease: 30
+        duration: 1
         delay: 0.3
     - rid: 3656701967168438281
       type: {class: JoinNode, ns: Runtime.Effects, asm: Assembly-CSharp}
@@ -6508,14 +6507,14 @@ MonoBehaviour:
       data:
         target: {fileID: 8644544483365669256}
         fromTargetPos: {fileID: 8644544484465664633}
-        duration: 1.5
+        duration: 3
         delay: 0
     - rid: 1833645807766863905
       type: {class: EffectMoveOut, ns: Runtime.Effects, asm: Assembly-CSharp}
       data:
         target: {fileID: 8644544483958292412}
         targetPos: {fileID: 8644544483651687309}
-        duration: 1.5
+        duration: 3
         delay: 0
     - rid: 3607306395644592143
       type: {class: EffectFadeInImage, ns: Runtime.Chapters.Act1, asm: Assembly-CSharp}
@@ -6541,14 +6540,14 @@ MonoBehaviour:
       data:
         target: {fileID: 8644544484509152453}
         fromTargetPos: {fileID: 8644544484465664633}
-        duration: 1.5
+        duration: 3
         delay: 0
     - rid: 3656701967168438305
       type: {class: EffectMoveOut, ns: Runtime.Effects, asm: Assembly-CSharp}
       data:
         target: {fileID: 8644544484599223531}
         targetPos: {fileID: 8644544483651687309}
-        duration: 1.5
+        duration: 3
         delay: 0
 --- !u!1 &8644544482978508067
 GameObject:
@@ -6926,7 +6925,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &8644544483303441556
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7247,13 +7246,14 @@ GameObject:
   - component: {fileID: 8644544483420546675}
   - component: {fileID: 8644544483420546684}
   - component: {fileID: 8644544483420546685}
+  - component: {fileID: 5009770265182372705}
   m_Layer: 5
   m_Name: Scene3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8644544483420546675
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7329,6 +7329,18 @@ MonoBehaviour:
   minuteHand: {fileID: 8644544484010246335}
   completeAtHour: 8
   completeEffect: {fileID: 6125445675736014871}
+--- !u!225 &5009770265182372705
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8644544483420546674}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &8644544483435100751
 GameObject:
   m_ObjectHideFlags: 0
@@ -9107,12 +9119,12 @@ MonoBehaviour:
         subNodes:
         - rid: 3607306395644592139
         - rid: 3607306395644592140
-        - rid: 3607306486508158980
+        - rid: 3607306610101977106
     - rid: 3607306395644592139
       type: {class: EffectFadeIn, ns: Runtime.Chapters.Act1, asm: Assembly-CSharp}
       data:
         _canvasGroup: {fileID: 8644544484311282797}
-        duration: 1
+        duration: 2
         delay: 0.8
     - rid: 3607306395644592140
       type: {class: EffectFadeInImage, ns: Runtime.Chapters.Act1, asm: Assembly-CSharp}
@@ -9124,17 +9136,13 @@ MonoBehaviour:
       type: {class: EffectFadeIn, ns: Runtime.Chapters.Act1, asm: Assembly-CSharp}
       data:
         _canvasGroup: {fileID: 7921966294711205470}
-        duration: 1.5
+        duration: 2
         delay: 0
-    - rid: 3607306486508158980
-      type: {class: EffectScaleOut, ns: Runtime.Effects, asm: Assembly-CSharp}
+    - rid: 3607306610101977106
+      type: {class: EffectFadeOut, ns: Runtime.Chapters.Act1, asm: Assembly-CSharp}
       data:
-        target: {fileID: 8644544483420546675}
-        from: {x: 1, y: 1, z: 1}
-        to: {x: 0, y: 0, z: 0}
-        ease: 27
+        _canvasGroup: {fileID: 5009770265182372705}
         duration: 0.5
-        delay: 1.5
 --- !u!1 &8644544483987655704
 GameObject:
   m_ObjectHideFlags: 0
@@ -9938,14 +9946,14 @@ MonoBehaviour:
       data:
         target: {fileID: 8644544483855829230}
         targetPos: {fileID: 8644544483651687309}
-        duration: 1.5
+        duration: 3
         delay: 0
     - rid: 1833645831783710727
       type: {class: EffectMoveIn, ns: Runtime.Effects, asm: Assembly-CSharp}
       data:
         target: {fileID: 8644544484601005303}
         fromTargetPos: {fileID: 8644544484465664633}
-        duration: 1.5
+        duration: 3
         delay: 0
 --- !u!1 &8644544484311282787
 GameObject:
@@ -10074,7 +10082,7 @@ MonoBehaviour:
       type: {class: EffectFadeIn, ns: Runtime.Chapters.Act1, asm: Assembly-CSharp}
       data:
         _canvasGroup: {fileID: 7518347248345800890}
-        duration: 1
+        duration: 2
         delay: 0
     - rid: 3607306371853713408
       type: {class: EffectFadeInImage, ns: Runtime.Chapters.Act1, asm: Assembly-CSharp}
@@ -10412,35 +10420,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _effectNodes:
   - rid: 3855360694210002945
-  - rid: 3607306395644592146
+  - rid: 3607306610101977105
   - rid: 3607306486508158976
   - rid: 3855360785723162632
   references:
     version: 2
     RefIds:
-    - rid: 3607306395644592146
-      type: {class: JoinNode, ns: Runtime.Effects, asm: Assembly-CSharp}
-      data:
-        delay: 0.5
-        subNodes:
-        - rid: 3607306395644592147
-    - rid: 3607306395644592147
-      type: {class: EffectFadeIn, ns: Runtime.Chapters.Act1, asm: Assembly-CSharp}
-      data:
-        _canvasGroup: {fileID: 8644544483567965711}
-        duration: 1.5
-        delay: 0
     - rid: 3607306486508158976
       type: {class: EffectFadeInImage, ns: Runtime.Chapters.Act1, asm: Assembly-CSharp}
       data:
         image: {fileID: 8644544483616971062}
         duration: 1
         delay: 0
-    - rid: 3607306600083095553
-      type: {class: EffectFadeOutImage, ns: Runtime.Chapters.Act1, asm: Assembly-CSharp}
+    - rid: 3607306610101977105
+      type: {class: EffectFadeIn, ns: Runtime.Chapters.Act1, asm: Assembly-CSharp}
       data:
-        image: {fileID: 8644544483753654849}
-        duration: 1
+        _canvasGroup: {fileID: 8644544483567965711}
+        duration: 2
+        delay: 0
+    - rid: 3607306610101977107
+      type: {class: EffectFadeIn, ns: Runtime.Chapters.Act1, asm: Assembly-CSharp}
+      data:
+        _canvasGroup: {fileID: 5009770265182372705}
+        duration: 2
         delay: 0
     - rid: 3855360694210002945
       type: {class: SequenceNode, ns: Runtime.Effects, asm: Assembly-CSharp}
@@ -10455,17 +10457,17 @@ MonoBehaviour:
         subNodes:
         - rid: 3855360694210002947
         - rid: 3855360694210002948
-        - rid: 3607306600083095553
+        - rid: 3607306610101977107
     - rid: 3855360694210002947
       type: {class: EffectFadeOut, ns: Runtime.Chapters.Act1, asm: Assembly-CSharp}
       data:
         _canvasGroup: {fileID: 8644544482808781864}
-        duration: 1
+        duration: 2
     - rid: 3855360694210002948
       type: {class: EffectFadeOutImage, ns: Runtime.Chapters.Act1, asm: Assembly-CSharp}
       data:
         image: {fileID: 8644544484035052758}
-        duration: 1
+        duration: 2
         delay: 0
     - rid: 3855360785723162632
       type: {class: JoinNode, ns: Runtime.Effects, asm: Assembly-CSharp}
@@ -10545,21 +10547,21 @@ MonoBehaviour:
       data:
         target: {fileID: 9171642499741983178}
         targetPos: {fileID: 8644544483838803161}
-        duration: 1.5
+        duration: 3
         delay: 0
     - rid: 3607306371853713410
       type: {class: EffectMoveIn, ns: Runtime.Effects, asm: Assembly-CSharp}
       data:
         target: {fileID: 8644544482808781871}
         fromTargetPos: {fileID: 8644544483285194479}
-        duration: 1.5
+        duration: 3
         delay: 0
     - rid: 3607306371853713411
       type: {class: EffectFadeInImage, ns: Runtime.Chapters.Act1, asm: Assembly-CSharp}
       data:
         image: {fileID: 4600363774969916020}
-        duration: 1
-        delay: 1
+        duration: 1.5
+        delay: 2
     - rid: 3607306371853713413
       type: {class: EffectFadeInImage, ns: Runtime.Chapters.Act1, asm: Assembly-CSharp}
       data:
@@ -10591,22 +10593,22 @@ MonoBehaviour:
     - rid: 3855360676580032537
       type: {class: EffectMoveOut, ns: Runtime.Effects, asm: Assembly-CSharp}
       data:
-        target: {fileID: 8644544483126964792}
+        target: {fileID: 8644544484601005303}
         targetPos: {fileID: 8644544483838803161}
-        duration: 1.5
+        duration: 3
         delay: 0
     - rid: 3855360676580032539
       type: {class: EffectMoveIn, ns: Runtime.Effects, asm: Assembly-CSharp}
       data:
         target: {fileID: 8644544484194642648}
         fromTargetPos: {fileID: 8644544483285194479}
-        duration: 1.5
+        duration: 3
         delay: 0
     - rid: 3855360676580032548
       type: {class: EffectTimer, ns: Runtime.Chapters.Act1, asm: Assembly-CSharp}
       data:
         timerAnims: {fileID: 8644544484035052757}
-        delay: 1
+        delay: 2
     - rid: 3855360676580032552
       type: {class: JoinNode, ns: Runtime.Effects, asm: Assembly-CSharp}
       data:
@@ -10798,12 +10800,12 @@ MonoBehaviour:
       data:
         puller: {fileID: 8644544483263097157}
         pullLength: 80
-        duration: 0.6
+        duration: 0.8
     - rid: 3855360676580032515
       type: {class: EffectFadeOut, ns: Runtime.Chapters.Act1, asm: Assembly-CSharp}
       data:
         _canvasGroup: {fileID: 8644544482907056301}
-        duration: 1
+        duration: 2
     - rid: 3855360676580032516
       type: {class: JoinNode, ns: Runtime.Effects, asm: Assembly-CSharp}
       data:

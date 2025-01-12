@@ -37,7 +37,7 @@ namespace Runtime.Chapters.Act2.Stamp
         
         private Tween DoInitPapers()
         {
-            var seq = DOTween.Sequence().AppendInterval(1f);
+            var seq = DOTween.Sequence().AppendInterval(2f);
             
             foreach (var paper in papers)
             {

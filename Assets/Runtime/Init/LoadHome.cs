@@ -7,7 +7,7 @@ namespace Runtime.Init
     {
         private void Start()
         {
-            Loading.Instance.LoadScene("Home", loadedEnumerator: null);
+            Loading.Instance.LoadScene("Home", 0.5f, loadedEnumerator: null);
         }
     }
 }

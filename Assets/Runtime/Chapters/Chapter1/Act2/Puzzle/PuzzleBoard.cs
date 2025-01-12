@@ -24,6 +24,9 @@ namespace Runtime.Chapters.Act2.Puzzle
         private IPuzzlePiece[] pieces;
         public PuzzleHelper PieceGroupHelper { get; private set; } = new PuzzleHelper();
 
+        private bool IsComplete =>
+            PieceGroupHelper.PiecesInGroupCount == pieces.Length && PieceGroupHelper.GroupCount == 1;
+        
         private void Awake()
         {
             Initialize();
@@ -60,6 +63,8 @@ namespace Runtime.Chapters.Act2.Puzzle
 
         public void Check(IPuzzlePiece checkPiece)
         {
+            if (IsComplete) return;
+            
             var groupToCheck = PieceGroupHelper.PieceGroup(checkPiece);
                 
             BlockUI.Instance.Block();
@@ -156,7 +161,7 @@ namespace Runtime.Chapters.Act2.Puzzle
             
             seq.Play().OnComplete(() =>
             {
-                if (PieceGroupHelper.PiecesInGroupCount == pieces.Length && PieceGroupHelper.GroupCount == 1)
+                if (IsComplete)
                 {
                     if (moveToPositionOnComplete)
                     {

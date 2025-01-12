@@ -1,0 +1,122 @@
+<linker>
+  <assembly fullname="Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="Runtime.Audio.AudioPlayClipOnClick" preserve="all" />
+    <type fullname="Runtime.Audio.AudioPlayOnClick" preserve="all" />
+    <type fullname="Runtime.Audio.AudioPlayOnEnable" preserve="all" />
+    <type fullname="Runtime.Audio.AudioPlayOnSlide" preserve="all" />
+    <type fullname="Runtime.Chapters.Act" preserve="all" />
+    <type fullname="Runtime.Chapters.Act1.ActionBrush" preserve="all" />
+    <type fullname="Runtime.Chapters.Act1.ActionBrushVisual" preserve="all" />
+    <type fullname="Runtime.Chapters.Act1.ActionEat" preserve="all" />
+    <type fullname="Runtime.Chapters.Act1.ActionEatArm" preserve="all" />
+    <type fullname="Runtime.Chapters.Act1.ActionEatFood" preserve="all" />
+    <type fullname="Runtime.Chapters.Act1.ActionEatProgress" preserve="all" />
+    <type fullname="Runtime.Chapters.Act1.ActionOpenBox" preserve="all" />
+    <type fullname="Runtime.Chapters.Act1.ActionScratch" preserve="all" />
+    <type fullname="Runtime.Chapters.Act1.ActionSleep" preserve="all" />
+    <type fullname="Runtime.Chapters.Act1.ActionTimePassed" preserve="all" />
+    <type fullname="Runtime.Chapters.Act1.ActionTimePassing" preserve="all" />
+    <type fullname="Runtime.Chapters.Act1.AnimSprites" preserve="all" />
+    <type fullname="Runtime.Chapters.Act1.BlockClick" preserve="all" />
+    <type fullname="Runtime.Chapters.Act1.BrushingArm" preserve="all" />
+    <type fullname="Runtime.Chapters.Act1.BrushingProgressBar" preserve="all" />
+    <type fullname="Runtime.Chapters.Act1.EffectScroll" preserve="all" />
+    <type fullname="Runtime.Chapters.Act1.WritingArm" preserve="all" />
+    <type fullname="Runtime.Chapters.Act2.Alarm.StopAlarmOnClick" preserve="all" />
+    <type fullname="Runtime.Chapters.Act2.Puzzle.PuzzleBoard" preserve="all" />
+    <type fullname="Runtime.Chapters.Act2.Puzzle.PuzzlePiece" preserve="all" />
+    <type fullname="Runtime.Chapters.Act2.Stamp.PaperStack" preserve="all" />
+    <type fullname="Runtime.Chapters.Act2.Stamp.Stamp" preserve="all" />
+    <type fullname="Runtime.Chapters.AutoScaleOnClick" preserve="all" />
+    <type fullname="Runtime.Chapters.Chapter2.Act1.ActionDraw" preserve="all" />
+    <type fullname="Runtime.Chapters.Chapter2.Act1.LetterScene.LetterSceneBook" preserve="all" />
+    <type fullname="Runtime.Chapters.Chapter2.Act1.LetterScene.LetterSceneBox" preserve="all" />
+    <type fullname="Runtime.Chapters.Chapter2.Act1.LetterScene.LetterSceneLetter" preserve="all" />
+    <type fullname="Runtime.Chapters.Chapter2.Act1.PictureGallery.PictureFrame" preserve="all" />
+    <type fullname="Runtime.Chapters.Chapter2.Act1.PictureGallery.PictureGallery" preserve="all" />
+    <type fullname="Runtime.Chapters.Chapter2.ActionScratchInverse" preserve="all" />
+    <type fullname="Runtime.CharMatch.CharMatchController" preserve="all" />
+    <type fullname="Runtime.CharMatch.UICharItem" preserve="all" />
+    <type fullname="Runtime.Clock.ClockHourHand" preserve="all" />
+    <type fullname="Runtime.Clock.ClockMinuteHand" preserve="all" />
+    <type fullname="Runtime.Core.ActCompleteButton" preserve="all" />
+    <type fullname="Runtime.Effects.EffectAutoPlay" preserve="all" />
+    <type fullname="Runtime.Effects.EffectButton" preserve="all" />
+    <type fullname="Runtime.Effects.EffectChain" preserve="all" />
+    <type fullname="Runtime.Effects.EffectOnProgressComplete" preserve="all" />
+    <type fullname="Runtime.Effects.EffectShakeRotationOnEnable" preserve="all" />
+    <type fullname="Runtime.Effects.SingleEffectButton" preserve="all" />
+    <type fullname="Runtime.Home.BackToHomeButton" preserve="all" />
+    <type fullname="Runtime.Home.SettingsButton" preserve="all" />
+    <type fullname="ScratcherInterpolate" preserve="all" />
+    <type fullname="ScratcherInterpolateInverse" preserve="all" />
+    <type fullname="Runtime.Audio.AudioPlay" preserve="nothing" serialized="true" />
+    <type fullname="Runtime.Chapters.Act1.ActionTimePassing/ActionTimePassingStage" preserve="nothing" serialized="true" />
+    <type fullname="Runtime.Chapters.Act1.AnimSpriteFrame" preserve="nothing" serialized="true" />
+    <type fullname="Runtime.Chapters.Act1.EffectFadeIn" preserve="nothing" serialized="true" />
+    <type fullname="Runtime.Chapters.Act1.EffectFadeInImage" preserve="nothing" serialized="true" />
+    <type fullname="Runtime.Chapters.Act1.EffectFadeOut" preserve="nothing" serialized="true" />
+    <type fullname="Runtime.Chapters.Act1.EffectFadeOutImage" preserve="nothing" serialized="true" />
+    <type fullname="Runtime.Chapters.Act1.EffectPullTrigger" preserve="nothing" serialized="true" />
+    <type fullname="Runtime.Chapters.Act1.EffectTimer" preserve="nothing" serialized="true" />
+    <type fullname="Runtime.Chapters.Act2.Sheet.CharMatchSheetStrategy" preserve="nothing" serialized="true" />
+    <type fullname="Runtime.Chapters.EffectCallback" preserve="nothing" serialized="true" />
+    <type fullname="Runtime.Effects.EffectChainNode" preserve="nothing" serialized="true" />
+    <type fullname="Runtime.Effects.EffectMoveIn" preserve="nothing" serialized="true" />
+    <type fullname="Runtime.Effects.EffectMoveOut" preserve="nothing" serialized="true" />
+    <type fullname="Runtime.Effects.EffectScale" preserve="nothing" serialized="true" />
+    <type fullname="Runtime.Effects.EffectScaleIn" preserve="nothing" serialized="true" />
+    <type fullname="Runtime.Effects.EffectScaleOut" preserve="nothing" serialized="true" />
+    <type fullname="Runtime.Effects.JoinNode" preserve="nothing" serialized="true" />
+    <type fullname="Runtime.Effects.SequenceNode" preserve="nothing" serialized="true" />
+  </assembly>
+  <assembly fullname="Unity.Addressables, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" preserve="all">
+    <type fullname="UnityEngine.AddressableAssets.Addressables" preserve="all" />
+  </assembly>
+  <assembly fullname="Unity.ResourceManager, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" preserve="all">
+    <type fullname="UnityEngine.ResourceManagement.ResourceProviders.AssetBundleProvider" preserve="all" />
+    <type fullname="UnityEngine.ResourceManagement.ResourceProviders.BundledAssetProvider" preserve="all" />
+    <type fullname="UnityEngine.ResourceManagement.ResourceProviders.InstanceProvider" preserve="all" />
+    <type fullname="UnityEngine.ResourceManagement.ResourceProviders.LegacyResourcesProvider" preserve="all" />
+    <type fullname="UnityEngine.ResourceManagement.ResourceProviders.SceneProvider" preserve="all" />
+  </assembly>
+  <assembly fullname="UnityEngine.AudioModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="UnityEngine.AudioClip" preserve="all" />
+  </assembly>
+  <assembly fullname="UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="UnityEngine.GameObject" preserve="all" />
+    <type fullname="UnityEngine.Material" preserve="all" />
+    <type fullname="UnityEngine.Object" preserve="all" />
+    <type fullname="UnityEngine.RectTransform" preserve="all" />
+    <type fullname="UnityEngine.RenderTexture" preserve="all" />
+    <type fullname="UnityEngine.Shader" preserve="all" />
+    <type fullname="UnityEngine.Sprite" preserve="all" />
+    <type fullname="UnityEngine.Texture2D" preserve="all" />
+    <type fullname="UnityEngine.Events.ArgumentCache" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.Events.PersistentCallGroup" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.Events.PersistentListenerMode" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.Events.UnityEvent" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.RectOffset" preserve="nothing" serialized="true" />
+  </assembly>
+  <assembly fullname="UnityEngine.TextRenderingModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="UnityEngine.Font" preserve="all" />
+  </assembly>
+  <assembly fullname="UnityEngine.UI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="UnityEngine.UI.CanvasScaler" preserve="all" />
+    <type fullname="UnityEngine.UI.GraphicRaycaster" preserve="all" />
+    <type fullname="UnityEngine.UI.GridLayoutGroup" preserve="all" />
+    <type fullname="UnityEngine.UI.Image" preserve="all" />
+    <type fullname="UnityEngine.UI.Mask" preserve="all" />
+    <type fullname="UnityEngine.UI.ScrollRect" preserve="all" />
+    <type fullname="UnityEngine.UI.Text" preserve="all" />
+    <type fullname="UnityEngine.UI.VerticalLayoutGroup" preserve="all" />
+    <type fullname="UnityEngine.UI.FontData" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.UI.MaskableGraphic/CullStateChangedEvent" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.UI.ScrollRect/ScrollRectEvent" preserve="nothing" serialized="true" />
+  </assembly>
+  <assembly fullname="UnityEngine.UIModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="UnityEngine.Canvas" preserve="all" />
+    <type fullname="UnityEngine.CanvasGroup" preserve="all" />
+    <type fullname="UnityEngine.CanvasRenderer" preserve="all" />
+  </assembly>
+</linker>

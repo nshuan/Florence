@@ -1,3 +1,5 @@
+using System;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -8,6 +10,8 @@ public class ScratcherInterpolate : MonoBehaviour, IPointerDownHandler, IDragHan
     [SerializeField] private Image targetImage;
     [SerializeField] private float transparencyRadius = 0.1f; // Adjust for desired transparency radius
     [SerializeField] private RenderTexture maskTexture;
+
+    public Action OnComplete;
 
     private Texture2D _maskTexture2D;
     private Vector2? lastUVPosition = null; // Track the last UV position for interpolation
@@ -23,6 +27,11 @@ public class ScratcherInterpolate : MonoBehaviour, IPointerDownHandler, IDragHan
         material.SetTexture("_AlphaMask", maskTexture);
     }
 
+    public void SetMaterial()
+    {
+        targetImage.material = material;
+    }
+    
     public void ProcessScratch(PointerEventData eventData)
     {
         Vector2 localPoint;
@@ -112,40 +121,42 @@ public class ScratcherInterpolate : MonoBehaviour, IPointerDownHandler, IDragHan
         _maskTexture2D.Apply();
     }
     
-    private bool IsImageFullyTransparent(Texture2D texture)
+    private bool IsImageFullyTransparent(Texture2D texture, float required = 0.9f)
     {
         // Get all the pixels in the texture
         var pixels = texture.GetPixels();
 
-        // Check each pixel's alpha value
-        foreach (var pixel in pixels)
-        {
-            if (pixel.a > 0) // If any pixel has an alpha greater than 0
-            {
-                return false; // The image is not fully transparent
-            }
-        }
+        // Get total transparent pixels
+        var totalTransparency = pixels.Count(pixel => pixel.a < 0.01f);
 
-        return true; // All pixels are fully transparent
+        return (float)totalTransparency / pixels.Length >= required; // Required percentage of pixels are transparent
     }
 
     public void OnPointerDown(PointerEventData eventData)
     {
+        if (targetImage.material != material) return;
         ProcessScratch(eventData);
     }
 
     public void OnDrag(PointerEventData eventData)
     {
+        if (targetImage.material != material) return;
         ProcessScratch(eventData);
     }
 
+    private bool isComplete;
     public void OnPointerUp(PointerEventData eventData)
     {
         lastUVPosition = null;
         
+        if (isComplete) return;
         if (IsImageFullyTransparent(_maskTexture2D))
         {
+#if UNITY_EDITOR
             Debug.Log("The image is fully transparent.");
+#endif
+            isComplete = true;
+            OnComplete?.Invoke();
         }
     }
 }

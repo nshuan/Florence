@@ -19,7 +19,7 @@ namespace Runtime.Chapters.Act1
             image.gameObject.SetActive(true);
             
             return DOTween.Sequence()
-                .Append(image.DOFade(1f, duration))
+                .Append(image.DOFade(1f, duration).SetEase(Ease.InSine))
                 .SetDelay(delay);
         }
     }

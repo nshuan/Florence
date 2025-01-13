@@ -1,4 +1,7 @@
 using Core;
+using DG.Tweening;
+using EasyButtons;
+using Runtime.Audio;
 using Runtime.Chapters;
 using UnityEngine;
 
@@ -10,6 +13,7 @@ namespace Runtime.Core
         [SerializeField] private Transform actParent;
         
         private readonly IActLoader actLoader = new ScriptableObjectActLoader();
+        private Act currentAct;
         
         public void LoadAct(int chapter, int act)
         {
@@ -18,7 +22,62 @@ namespace Runtime.Core
             var actInstance = Instantiate(actPref, actParent);
             actInstance.transform.position = Vector3.zero;
 
-            actInstance.DoShow();
+            var lastAct = currentAct;
+            currentAct = actInstance;
+            AudioManager.Instance.VolumeOffBgMusic();
+            actInstance.DoShow().OnComplete(() =>
+            {
+                RestartMusic();
+                if (lastAct == null) return;
+                Destroy(lastAct.gameObject);
+            });
         }
+
+        public void RestartMusic()
+        {
+            currentAct.PlayMusic();
+        }
+
+        public bool TryLoadAct(int chapter, int act, out Act actInstance)
+        {
+            var actPref = actLoader.Load(chapter, act);
+            if (actPref == null)
+            {
+                actInstance = null;
+                return false;
+            }
+            
+            actInstance = Instantiate(actPref, actParent);
+            actInstance.transform.position = Vector3.zero;
+
+            var lastAct = currentAct;
+            currentAct = actInstance;
+            AudioManager.Instance.VolumeOffBgMusic();
+            actInstance.DoShow().OnComplete(() =>
+            {
+                RestartMusic();
+                if (lastAct == null) return;
+                Destroy(lastAct.gameObject);
+            });
+
+            return true;
+        }
+
+#if UNITY_EDITOR
+        [Space]
+        [Header("-- Editor Only --")]
+        [SerializeField] private Act actToLoad;
+        [Button]
+        private void LoadAct(Act prefab)
+        {
+            prefab ??= actToLoad;
+            currentAct = Instantiate(prefab, actParent);
+            currentAct.transform.position = Vector3.zero;
+
+            currentAct.DoShow();
+            
+            RestartMusic();
+        }
+#endif
     }
 }

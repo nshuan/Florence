@@ -6,6 +6,7 @@ namespace Runtime.Audio
     public class AudioPlayOnSlide : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPointerMoveHandler
     {
         [SerializeField] private AudioPlay audioPlay;
+        [SerializeField] private float volumeScale = 1f;
 
         private bool isHolding = false;
         
@@ -23,7 +24,7 @@ namespace Runtime.Audio
         public void OnPointerMove(PointerEventData eventData)
         {
             if (isHolding)
-                audioPlay.Play();
+                audioPlay.Play(volumeScale);
         }
     }
 }

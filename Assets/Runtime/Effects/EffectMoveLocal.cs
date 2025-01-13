@@ -14,8 +14,8 @@ namespace Runtime.Effects
         
         public Tween GetTween()
         {
-            return DOTween.Sequence().SetDelay(delay)
-                .Append(target.DOLocalMove(targetPos.localPosition, duration));
+            return DOTween.Sequence().SetDelay(delay).SetEase(Ease.Linear)
+                .Append(target.DOLocalMove(targetPos.localPosition, duration).SetEase(Ease.Linear));
         }
     }
 }

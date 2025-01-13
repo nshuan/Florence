@@ -17,15 +17,15 @@ namespace Runtime.Chapters
             canvasGroup.alpha = 0f;
         }
 
-        private void Start()
-        {
-            AudioManager.Instance.SetBgMusicAndOn(bgMusic);
-        }
-
         public Tween DoShow()
         {
             gameObject.SetActive(true);
             return transitionIn.PlayEffect();
+        }
+
+        public void PlayMusic()
+        {
+            AudioManager.Instance.SetBgMusicAndOn(bgMusic, 1f);
         }
     }
 }

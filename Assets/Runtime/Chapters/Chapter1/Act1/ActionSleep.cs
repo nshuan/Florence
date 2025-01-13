@@ -10,6 +10,7 @@ namespace Runtime.Chapters.Act1
         [SerializeField] private Image[] zLetters;
         [SerializeField] private float duration;
         [SerializeField] private float delay;
+        [SerializeField] private float firstDelay = 0f;
 
         private void OnEnable()
         {
@@ -29,7 +30,7 @@ namespace Runtime.Chapters.Act1
                 letter.color = new Color(1f, 1f, 1f, 0.2f);
             }
 
-            var seq = DOTween.Sequence().SetTarget(transform).SetLoops(-1);
+            var seq = DOTween.Sequence().SetTarget(transform).SetLoops(-1).SetDelay(firstDelay);
 
             for (var i = 0; i < zLetters.Length; i++)
             {

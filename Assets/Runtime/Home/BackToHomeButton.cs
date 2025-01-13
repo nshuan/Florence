@@ -9,7 +9,7 @@ namespace Runtime.Home
         public void OnPointerClick(PointerEventData eventData)
         {
             AudioManager.Instance.VolumeOffBgMusic();
-            Loading.Instance.LoadScene("Home", loadedAction: null);    
+            Loading.Instance.LoadScene("Home", 1f, loadedAction: null);    
         }
     }
 }

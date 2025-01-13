@@ -5,7 +5,10 @@ namespace Core
 {
     public class CameraUtility : MonoSingleton<CameraUtility>
     {
-        private static Camera Main { get; set; }
+        [SerializeField] private Transform gameViewMask;
+        
+        public static Camera Main { get; private set; }
+        public Transform GameViewMask => gameViewMask;
 
         private void Start()
         {

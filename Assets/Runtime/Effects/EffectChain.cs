@@ -23,5 +23,10 @@ namespace Runtime.Effects
 
             return sequence;
         }
+
+        public void Play()
+        {
+            PlayEffect().Play();
+        }
     }
 }

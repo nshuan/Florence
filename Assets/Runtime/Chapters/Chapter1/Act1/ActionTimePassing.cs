@@ -46,11 +46,9 @@ namespace Runtime.Chapters.Act1
             if (hour < stageData[currentStageIndex].hourToHide) return;
             if (stageData[currentStageIndex].graphic == null) return;
 
-            var currentStage = stageData[currentStageIndex];
-            currentStage.graphic.DOFade(0f, hideDuration).SetDelay(hideDelay).OnComplete(() =>
-            {
-                currentStage.graphic.gameObject.SetActive(false);
-            });
+            var nextStage = stageData[currentStageIndex + 1];
+	    nextStage.graphic.gameObject.SetActive(true);
+            nextStage.graphic.DOFade(1f, hideDuration).SetDelay(hideDelay);
 
             currentStageIndex += 1;
         }
@@ -58,7 +56,7 @@ namespace Runtime.Chapters.Act1
         [Serializable]
         public class ActionTimePassingStage
         {
-            public Graphic graphic;
+            public CanvasGroup graphic;
             public int hourToHide;
         }
     }

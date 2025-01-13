@@ -175,48 +175,57 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _effectNodes:
-  - rid: 3656702058027810844
-  - rid: 3607306620473442305
-  - rid: 3607306620473442306
-  - rid: 3607306620473442307
+  - rid: 3656702196121600000
+  - rid: 3656702196121600003
+  - rid: 3656702196121600004
   references:
     version: 2
     RefIds:
-    - rid: 3607306620473442305
-      type: {class: EffectFadeOut, ns: Runtime.Chapters.Act1, asm: Assembly-CSharp}
-      data:
-        _canvasGroup: {fileID: 4108734028765724691}
-        duration: 2
-    - rid: 3607306620473442306
-      type: {class: EffectFadeIn, ns: Runtime.Chapters.Act1, asm: Assembly-CSharp}
-      data:
-        _canvasGroup: {fileID: 240113362177205238}
-        duration: 2
-        delay: 0
-    - rid: 3607306620473442307
+    - rid: 3656702196121600000
       type: {class: JoinNode, ns: Runtime.Effects, asm: Assembly-CSharp}
       data:
         delay: 0
         subNodes:
-        - rid: 3607306620473442308
-        - rid: 3607306620473442309
-    - rid: 3607306620473442308
+        - rid: 3656702196121600001
+        - rid: 3656702196121600002
+    - rid: 3656702196121600001
+      type: {class: EffectMoveIn, ns: Runtime.Effects, asm: Assembly-CSharp}
+      data:
+        target: {fileID: 5280816693136021722}
+        fromTargetPos: {fileID: 8644544484465664633}
+        duration: 3
+        delay: 0
+    - rid: 3656702196121600002
+      type: {class: EffectMoveOut, ns: Runtime.Effects, asm: Assembly-CSharp}
+      data:
+        target: {fileID: 1169449783317761117}
+        targetPos: {fileID: 8644544483651687309}
+        duration: 3
+        delay: 0
+    - rid: 3656702196121600003
       type: {class: EffectFadeInImage, ns: Runtime.Chapters.Act1, asm: Assembly-CSharp}
       data:
-        image: {fileID: 228747249665370299}
+        image: {fileID: 1256531425883342336}
         duration: 0.5
+        delay: 1
+    - rid: 3656702196121600004
+      type: {class: JoinNode, ns: Runtime.Effects, asm: Assembly-CSharp}
+      data:
         delay: 0
-    - rid: 3607306620473442309
+        subNodes:
+        - rid: 3656702196121600005
+        - rid: 3656702196121600006
+    - rid: 3656702196121600005
       type: {class: EffectFadeInImage, ns: Runtime.Chapters.Act1, asm: Assembly-CSharp}
       data:
-        image: {fileID: 8987020952723320494}
+        image: {fileID: 771486933747690498}
         duration: 0.5
         delay: 0
-    - rid: 3656702058027810844
-      type: {class: EffectFadeIn, ns: Runtime.Chapters.Act1, asm: Assembly-CSharp}
+    - rid: 3656702196121600006
+      type: {class: EffectFadeInImage, ns: Runtime.Chapters.Act1, asm: Assembly-CSharp}
       data:
-        _canvasGroup: {fileID: 4080419381809927525}
-        duration: 2
+        image: {fileID: 3398139712424284680}
+        duration: 0.5
         delay: 0
 --- !u!1 &239397381974199545
 GameObject:
@@ -6935,17 +6944,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7692633150196769587, guid: 5d8f6b03de45613429815416b683fe7a, type: 3}
   m_PrefabInstance: {fileID: 378254768338545166}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &8987020952723320494 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8757138724748936352, guid: 5d8f6b03de45613429815416b683fe7a, type: 3}
-  m_PrefabInstance: {fileID: 378254768338545166}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &3360651102993685687
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7284,6 +7282,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4127337642299607037, guid: 0dc049719a4564d43a034fc16d4e3282, type: 3}
       propertyPath: nextAct
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4127337642299607037, guid: 0dc049719a4564d43a034fc16d4e3282, type: 3}
+      propertyPath: nextChapter
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4550599566786646464, guid: 0dc049719a4564d43a034fc16d4e3282, type: 3}
@@ -7610,6 +7612,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d8f6b03de45613429815416b683fe7a, type: 3}
+--- !u!114 &3398139712424284680 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8757138724748936352, guid: 5d8f6b03de45613429815416b683fe7a, type: 3}
+  m_PrefabInstance: {fileID: 6246217073522431656}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &4354624883005044123 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7692633150196769587, guid: 5d8f6b03de45613429815416b683fe7a, type: 3}
@@ -7716,6 +7729,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d7f3cc76934da64982307e2630bba92, type: 3}
+--- !u!114 &771486933747690498 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7898105914842636660, guid: 2d7f3cc76934da64982307e2630bba92, type: 3}
+  m_PrefabInstance: {fileID: 7435278318267108726}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &8248338566783112687 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1538144221003421849, guid: 2d7f3cc76934da64982307e2630bba92, type: 3}
@@ -7822,17 +7846,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d7f3cc76934da64982307e2630bba92, type: 3}
---- !u!114 &228747249665370299 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7898105914842636660, guid: 2d7f3cc76934da64982307e2630bba92, type: 3}
-  m_PrefabInstance: {fileID: 7977872832480512463}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &8930513917479162198 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1538144221003421849, guid: 2d7f3cc76934da64982307e2630bba92, type: 3}

@@ -6512,7 +6512,7 @@ MonoBehaviour:
     - rid: 1833645807766863905
       type: {class: EffectMoveOut, ns: Runtime.Effects, asm: Assembly-CSharp}
       data:
-        target: {fileID: 8644544483958292412}
+        target: {fileID: 8644544484684110091}
         targetPos: {fileID: 8644544483651687309}
         duration: 3
         delay: 0

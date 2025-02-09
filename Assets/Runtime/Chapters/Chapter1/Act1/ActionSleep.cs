@@ -11,6 +11,7 @@ namespace Runtime.Chapters.Act1
         [SerializeField] private float duration;
         [SerializeField] private float delay;
         [SerializeField] private float firstDelay = 0f;
+        [SerializeField] private float alphaOnHidden = 0.2f;
 
         private void OnEnable()
         {
@@ -27,7 +28,7 @@ namespace Runtime.Chapters.Act1
             transform.DOKill();
             foreach (var letter in zLetters)
             {
-                letter.color = new Color(1f, 1f, 1f, 0.2f);
+                letter.color = new Color(1f, 1f, 1f, alphaOnHidden);
             }
 
             var seq = DOTween.Sequence().SetTarget(transform).SetLoops(-1).SetDelay(firstDelay);
@@ -39,7 +40,7 @@ namespace Runtime.Chapters.Act1
                     .AppendInterval(delay * i)
                     .Append(letter.DOFade(1f, duration))
                     .AppendInterval(duration)
-                    .Append(letter.DOFade(0.2f, duration))
+                    .Append(letter.DOFade(alphaOnHidden, duration))
                     .AppendInterval(delay));
             }
 

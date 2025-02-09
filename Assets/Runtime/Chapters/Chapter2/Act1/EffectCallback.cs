@@ -10,10 +10,11 @@ namespace Runtime.Chapters
     public class EffectCallback : IEffectNode
     {
         [SerializeField] private UnityEvent events;
+        [SerializeField] private float delay = 0f;
         
         public Tween GetTween()
         {
-            return DOTween.Sequence()
+            return DOTween.Sequence().SetDelay(delay)
                 .AppendCallback(() => events.Invoke());
         }
     }

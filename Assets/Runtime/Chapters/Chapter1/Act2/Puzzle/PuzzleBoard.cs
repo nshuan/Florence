@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http.Headers;
 using DG.Tweening;
 using EasyButtons;
 using Runtime.Audio;
@@ -8,6 +9,7 @@ using Runtime.Core;
 using Runtime.Effects;
 using Unity.Collections;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Runtime.Chapters.Act2.Puzzle
 {
@@ -23,6 +25,7 @@ namespace Runtime.Chapters.Act2.Puzzle
         private Vector3 firstPieceTargetPosition;
         private IPuzzlePiece[] pieces;
         public PuzzleHelper PieceGroupHelper { get; private set; } = new PuzzleHelper();
+        [SerializeField] public FloatOutPieceManager floatPieceHelper;
 
         private bool IsComplete =>
             PieceGroupHelper.PiecesInGroupCount == pieces.Length && PieceGroupHelper.GroupCount == 1;
@@ -41,6 +44,14 @@ namespace Runtime.Chapters.Act2.Puzzle
             {
                 piece.Initialize();
                 piece.Board = this;
+                
+                PieceGroupHelper.AddGroup(piece);
+            }
+
+            floatPieceHelper.FloatOutFromTarget = transform;
+            foreach (var piece in pieces)
+            {
+                floatPieceHelper.SetGroupState(PieceGroupHelper.PieceGroup(piece), true);
             }
         }
 
@@ -152,10 +163,13 @@ namespace Runtime.Chapters.Act2.Puzzle
                 }
             }
 
+            floatPieceHelper.RemoveGroup(groupToCheck);
             foreach (var group in connectedGroups.Where(group => group.Length > 0))
             {
+                floatPieceHelper.RemoveGroup(group);
                 PieceGroupHelper.ConnectGroup(checkPiece, group[0]);
             }
+            floatPieceHelper.AddGroup(PieceGroupHelper.PieceGroup(checkPiece));
             
             connectAudio.Play(0.5f);
             
@@ -173,6 +187,10 @@ namespace Runtime.Chapters.Act2.Puzzle
                     }
                     else
                         OnComplete?.Invoke();
+                }
+                else
+                {
+                    floatPieceHelper.SetGroupState(PieceGroupHelper.PieceGroup(checkPiece), true);
                 }
                 
                 BlockUI.Instance.Unblock();

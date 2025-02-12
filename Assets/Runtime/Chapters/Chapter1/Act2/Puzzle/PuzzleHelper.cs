@@ -10,6 +10,11 @@ namespace Runtime.Chapters.Act2.Puzzle
         public int GroupCount => _pieceGroupMap.Keys.GroupBy((key) => _pieceGroupMap[key]).Count();
         public int PiecesInGroupCount => _pieceGroupMap.Keys.Count;
 
+        public void AddGroup(IPuzzlePiece piece)
+        {
+            if (!_pieceGroupMap.ContainsKey(piece)) _pieceGroupMap[piece] = new IPuzzlePiece[] { piece };
+        }
+        
         public void ConnectGroup(IPuzzlePiece piece1, IPuzzlePiece piece2)
         {
             if (!_pieceGroupMap.ContainsKey(piece1)) _pieceGroupMap[piece1] = new IPuzzlePiece[] { piece1 };

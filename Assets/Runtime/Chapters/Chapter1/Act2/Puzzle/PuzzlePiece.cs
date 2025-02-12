@@ -60,6 +60,7 @@ namespace Runtime.Chapters.Act2.Puzzle
         public void OnPointerDown(PointerEventData eventData)
         {
             transform.DOKill();
+            Board.floatPieceHelper.SetGroupState(Board.PieceGroupHelper.PieceGroup(this), false);
             isHolding = true;
             transform.SetAsLastSibling();
             _mouseAnchor = CameraUtility.ScreenToWorldPoint(eventData.position);
@@ -69,15 +70,6 @@ namespace Runtime.Chapters.Act2.Puzzle
         {
             if (isHolding)
             {
-                // var distance = (Vector2)UnityEngine.Input.mousePosition - _mouseAnchor;
-                // _mouseAnchor = (Vector2)UnityEngine.Input.mousePosition;
-                //
-                // foreach (var piece in Board.PieceGroupHelper.PieceGroup(this))
-                // {
-                //     piece.Transform.SetAsLastSibling();
-                //     piece.Transform.localPosition = (Vector2)piece.Transform.localPosition + distance;
-                // }
-                
                 var distance = CameraUtility.ScreenToWorldPoint(eventData.position) - (Vector3)_mouseAnchor;
                 _mouseAnchor = CameraUtility.ScreenToWorldPoint(eventData.position);
                 foreach (var piece in Board.PieceGroupHelper.PieceGroup(this))

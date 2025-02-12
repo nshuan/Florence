@@ -2035,7 +2035,7 @@ MonoBehaviour:
       type: {class: EffectChainNode, ns: Runtime.Effects, asm: Assembly-CSharp}
       data:
         effectChain: {fileID: 2635476937205971826}
-        isCallback: 1
+        isCallback: 0
 --- !u!1 &2752475964431435496
 GameObject:
   m_ObjectHideFlags: 0

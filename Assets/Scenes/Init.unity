@@ -790,7 +790,7 @@ GameObject:
   - component: {fileID: 1441117889}
   - component: {fileID: 1441117890}
   m_Layer: 0
-  m_Name: ThirdASound
+  m_Name: ThirdSound
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

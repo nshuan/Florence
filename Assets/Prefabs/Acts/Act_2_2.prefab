@@ -1369,6 +1369,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5656242147520556762}
   - component: {fileID: 3038794396254041597}
+  - component: {fileID: 1755254185374465495}
   m_Layer: 5
   m_Name: Puzzle (1)
   m_TagString: Untagged
@@ -1414,9 +1415,22 @@ MonoBehaviour:
   connectAudio:
     audioClip: {fileID: 8300000, guid: 265b74b260fdf4d4190d50db8e72bb46, type: 3}
   moveToPositionOnComplete: 0
+  floatPieceHelper: {fileID: 1755254185374465495}
   initializePlaceholder:
   - {fileID: 8784396618093589611}
   - {fileID: 6480963826313331487}
+--- !u!114 &1755254185374465495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2561118271118158804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 580408ea4d97426686ed5eddfd046f4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2567645438113800938
 GameObject:
   m_ObjectHideFlags: 0
@@ -1657,6 +1671,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2480402807309554846}
   - component: {fileID: 4616143031298227438}
+  - component: {fileID: 6010340721414433205}
   m_Layer: 5
   m_Name: Puzzle
   m_TagString: Untagged
@@ -1707,6 +1722,7 @@ MonoBehaviour:
   connectAudio:
     audioClip: {fileID: 8300000, guid: 265b74b260fdf4d4190d50db8e72bb46, type: 3}
   moveToPositionOnComplete: 0
+  floatPieceHelper: {fileID: 6010340721414433205}
   initializePlaceholder:
   - {fileID: 8411225684383086745}
   - {fileID: 6704555411001109191}
@@ -1715,6 +1731,18 @@ MonoBehaviour:
   - {fileID: 6612891791971371630}
   - {fileID: 5017973179381658079}
   - {fileID: 8777344958049156440}
+--- !u!114 &6010340721414433205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2758567416039259760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 580408ea4d97426686ed5eddfd046f4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2777065099936278970
 GameObject:
   m_ObjectHideFlags: 0
@@ -3391,6 +3419,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectChain: {fileID: 8644544484225287003}
+  canRestart: 0
 --- !u!114 &3425727185473104954
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3838,6 +3867,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectChain: {fileID: 2839518709085389305}
+  canRestart: 0
 --- !u!114 &2839518709085389305
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4832,6 +4862,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectChain: {fileID: 2629038889240920422}
+  canRestart: 0
 --- !u!114 &6648712696501891602
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5055,6 +5086,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectChain: {fileID: 8444210954547202354}
+  canRestart: 0
 --- !u!114 &6365183602050083433
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5575,6 +5607,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectChain: {fileID: 8644544484595159997}
+  canRestart: 0
 --- !u!114 &7728537217125597203
 MonoBehaviour:
   m_ObjectHideFlags: 0

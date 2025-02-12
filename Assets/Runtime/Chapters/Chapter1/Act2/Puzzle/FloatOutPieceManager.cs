@@ -31,10 +31,24 @@ namespace Runtime.Chapters.Act2.Puzzle
         {
             if (group == null || group.Length == 0) return;
 
-            var direction = (group[0].Transform.position - FloatOutFromTarget.position).normalized; 
+            var direction = (group[0].Transform.position - FloatOutFromTarget.position).normalized;
+            var blocked = false;
             foreach (var piece in group)
             {
-                piece.Transform.position += direction * floatSpeedScale;
+                var targetDistance = piece.Transform.position + direction * floatSpeedScale - FloatOutFromTarget.position;
+                if (Mathf.Abs(targetDistance.x) > 8f || Mathf.Abs(targetDistance.y) > 3.6f)
+                {
+                    blocked = true;
+                    break;
+                }
+            }
+
+            if (!blocked)
+            {
+                foreach (var piece in group)
+                {
+                    piece.Transform.position += direction * floatSpeedScale;
+                }
             }
         }
 

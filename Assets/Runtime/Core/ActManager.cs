@@ -27,7 +27,8 @@ namespace Runtime.Core
             AudioManager.Instance.VolumeOffBgMusic();
             actInstance.DoShow().OnComplete(() =>
             {
-                RestartMusic();
+                if (actInstance.autoPlayBgMusic)
+                    RestartMusic();
                 if (lastAct == null) return;
                 Destroy(lastAct.gameObject);
             });

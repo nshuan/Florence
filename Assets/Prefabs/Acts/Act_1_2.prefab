@@ -6530,6 +6530,7 @@ MonoBehaviour:
   canvasGroup: {fileID: 7518347248345800890}
   transitionIn: {fileID: 8644544484312280447}
   bgMusic: {fileID: 8300000, guid: 3f79fbd8648cc4f4ebb3d98eabd8436d, type: 3}
+  autoPlayBgMusic: 0
 --- !u!225 &7518347248345800890
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -7312,6 +7313,25 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
+    - rid: 1643634952497266688
+      type: {class: EffectCallback, ns: Runtime.Chapters, asm: Assembly-CSharp}
+      data:
+        events:
+          m_PersistentCalls:
+            m_Calls:
+            - m_Target: {fileID: 2283076345288660475}
+              m_TargetAssemblyTypeName: Runtime.Chapters.Act, Assembly-CSharp
+              m_MethodName: PlayMusic
+              m_Mode: 1
+              m_Arguments:
+                m_ObjectArgument: {fileID: 0}
+                m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+                m_IntArgument: 0
+                m_FloatArgument: 0
+                m_StringArgument: 
+                m_BoolArgument: 0
+              m_CallState: 2
+        delay: 0.5
     - rid: 1833645831783710725
       type: {class: JoinNode, ns: Runtime.Effects, asm: Assembly-CSharp}
       data:
@@ -7319,6 +7339,7 @@ MonoBehaviour:
         subNodes:
         - rid: 1833645831783710727
         - rid: 1833645831783710726
+        - rid: 1643634952497266688
     - rid: 1833645831783710726
       type: {class: EffectMoveOut, ns: Runtime.Effects, asm: Assembly-CSharp}
       data:

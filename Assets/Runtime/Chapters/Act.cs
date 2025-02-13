@@ -11,6 +11,7 @@ namespace Runtime.Chapters
         [SerializeField] private CanvasGroup canvasGroup;
         [SerializeField] private EffectChain transitionIn;
         [SerializeField] private AudioClip bgMusic;
+        [SerializeField] public bool autoPlayBgMusic = true;
             
         private void Awake()
         {

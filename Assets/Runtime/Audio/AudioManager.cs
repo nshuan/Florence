@@ -17,11 +17,11 @@ namespace Runtime.Audio
 
         public void ChangeBgMusic(AudioClip music, float volume = 0.1f)
         {
-            DOTween.Sequence()
+            DOTween.Sequence().SetTarget(bgMusic.transform)
                 .Append(DOTween.To(x => bgMusic.volume = x, bgMusic.volume, 0, 0.5f))
                 .AppendCallback(() => bgMusic.clip = music)
                 .AppendCallback(() => bgMusic.Play())
-                .Append(DOTween.To(x => bgMusic.volume = x, 0, volume, 0.5f))
+                .Append(DOTween.To(x => bgMusic.volume = x, 0, volume, 2f))
                 .Play();
         }
 
@@ -32,13 +32,13 @@ namespace Runtime.Audio
                 .Play();
         }
 
-        public void SetBgMusicAndOn(AudioClip music, float volume = 0.1f)
+        public void SetBgMusicAndOn(AudioClip music, float volume = 0.1f, float delay = 0f)
         {
             DOTween.Sequence().SetTarget(bgMusic.transform)
-                .Append(DOTween.To(x => bgMusic.volume = x, bgMusic.volume, 0, 0.5f))
                 .AppendCallback(() => bgMusic.clip = music)
                 .AppendCallback(() => bgMusic.Play())
-                .Append(DOTween.To(x => bgMusic.volume = x, 0, volume, 0.5f))
+                .AppendInterval(delay)
+                .Append(DOTween.To(x => bgMusic.volume = x, 0, volume, 2f))
                 .Play();
         }
 

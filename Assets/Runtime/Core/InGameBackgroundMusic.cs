@@ -9,7 +9,7 @@ namespace Runtime.Core
         
         private void Start()
         {
-            AudioManager.Instance.SetBgMusicAndOn(bgMusic);
+            AudioManager.Instance.ChangeBgMusic(bgMusic);
         }
     }
 }

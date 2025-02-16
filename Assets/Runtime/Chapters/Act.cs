@@ -11,6 +11,7 @@ namespace Runtime.Chapters
         [SerializeField] private CanvasGroup canvasGroup;
         [SerializeField] private EffectChain transitionIn;
         [SerializeField] private AudioClip bgMusic;
+        [SerializeField] private float volume = 0.8f;
         [SerializeField] public bool autoPlayBgMusic = true;
             
         private void Awake()
@@ -26,7 +27,7 @@ namespace Runtime.Chapters
 
         public void PlayMusic()
         {
-            AudioManager.Instance.SetBgMusicAndOn(bgMusic, 1f);
+            AudioManager.Instance.SetBgMusicAndOn(bgMusic, volume);
         }
     }
 }

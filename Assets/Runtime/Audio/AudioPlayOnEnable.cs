@@ -16,7 +16,8 @@ namespace Runtime.Audio
 
         public void OnDisable()
         {
-            AudioManager.Instance.StopThirdSound();
+            if (AudioManager.Instance)
+                AudioManager.Instance.StopThirdSound();
         }
     }
 }

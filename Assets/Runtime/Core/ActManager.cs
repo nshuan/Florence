@@ -54,9 +54,11 @@ namespace Runtime.Core
             var lastAct = currentAct;
             currentAct = actInstance;
             AudioManager.Instance.VolumeOffBgMusic();
+            var isPlayMusic = actInstance.autoPlayBgMusic;
             actInstance.DoShow().OnComplete(() =>
             {
-                RestartMusic();
+                if (isPlayMusic)
+                    RestartMusic();
                 if (lastAct == null) return;
                 Destroy(lastAct.gameObject);
             });

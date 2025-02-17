@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/AddressableAssetsData/iOS.meta
+guid: b87a3507f955f43ae97523b8fc00ac3c
+folderAsset: yes
+========
+guid: 0403b2ab3bc93b942be3e677630f1dca
+>>>>>>>> master:Assets/Scenes/Test.unity.meta
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
